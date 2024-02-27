@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherPackController">
+   <children>
+      <TableView layoutX="66.0" layoutY="111.0" prefHeight="329.0" prefWidth="582.0">
+        <columns>
+          <TableColumn prefWidth="154.39997100830078" text="id pack" />
+          <TableColumn prefWidth="136.00006103515625" text="type pack" />
+            <TableColumn prefWidth="135.199951171875" text="prix" />
+            <TableColumn prefWidth="159.99996948242188" text="avantages" />
+        </columns>
+      </TableView>
+      <Text fill="#00dcff" layoutX="161.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO MUSEFIX">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+   </children>
+</AnchorPane>
