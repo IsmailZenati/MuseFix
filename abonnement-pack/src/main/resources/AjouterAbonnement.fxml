@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Bloom?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -23,11 +22,6 @@
             </Text>
             <Text fill="WHITE" layoutX="10.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 23; -fx-font-style: #c30211; -fx-font-family: serif;" text="ULTIMATE  DYNASTY" wrappingWidth="245.18841516971588" />
             <Text fill="WHITE" layoutX="30.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="ultimateDynasty@support.com" underline="true" />
-            <ImageView fitHeight="150.0" fitWidth="211.0" layoutX="19.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../../../../OneDrive/Images/Captures%20d’écran/logo.png"/>
-               </image>
-            </ImageView>
          </children>
       </AnchorPane>
    </left>
