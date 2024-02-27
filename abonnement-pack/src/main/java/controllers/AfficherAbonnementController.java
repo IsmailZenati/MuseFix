@@ -28,30 +28,25 @@ public class AfficherAbonnementController {
     private TableColumn<abonnement, Integer> col_iduser;
 
     @FXML
-    private TableColumn<abonnement,Integer> col_idPack;
+    private TableColumn<abonnement,Integer> col_idpack;
 
     @FXML
     private TableView<abonnement> tv_abonnement;
 
     @FXML
     void initialize() {
-        ObservableList<abonnement> abonnements = null;
         try {
-            ServiceAbonnement sa = new ServiceAbonnement();
-            abonnements = FXCollections.observableArrayList();
-            abonnements.addAll(sa.afficher());
+            ServiceAbonnement serviceAbonnement = new ServiceAbonnement();
+            ObservableList<abonnement> abonnements= FXCollections.observableArrayList(serviceAbonnement.afficher());
 
-
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
             tv_abonnement.setItems(abonnements);
             col_idabonnement.setCellValueFactory(new PropertyValueFactory<>("idAbonnement"));
             col_iduser.setCellValueFactory(new PropertyValueFactory<>("userID"));
-            col_idPack.setCellValueFactory(new PropertyValueFactory<>("idPack"));
+            col_idpack.setCellValueFactory(new PropertyValueFactory<>("IdPack"));
             col_datedebut.setCellValueFactory(new PropertyValueFactory<>("dateDeb"));
             col_datefin.setCellValueFactory(new PropertyValueFactory<>("dateFin"));
-
-
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 }
