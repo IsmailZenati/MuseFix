@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="third subscription commit">
+    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="fourth subscription commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AjouterAbonnement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AjouterAbonnement.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AjouterPack.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AjouterPack.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +76,7 @@
       <workItem from="1708965852810" duration="52000" />
       <workItem from="1709023111771" duration="290000" />
       <workItem from="1709023481355" duration="150000" />
-      <workItem from="1709023655982" duration="26893000" />
+      <workItem from="1709023655982" duration="28531000" />
     </task>
     <task id="LOCAL-00001" summary="First subscription commit 1.00">
       <option name="closed" value="true" />
@@ -111,7 +110,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709064609126</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="fourth subscription commit">
+      <option name="closed" value="true" />
+      <created>1709067440317</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709067440317</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,6 +128,7 @@
     <MESSAGE value="First subscription commit 1.00" />
     <MESSAGE value="Second subscription commit 1.01" />
     <MESSAGE value="third subscription commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="third subscription commit" />
+    <MESSAGE value="fourth subscription commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="fourth subscription commit" />
   </component>
 </project>
