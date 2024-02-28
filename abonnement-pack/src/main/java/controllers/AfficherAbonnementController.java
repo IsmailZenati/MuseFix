@@ -38,7 +38,7 @@ public class AfficherAbonnementController {
         try {
             ServiceAbonnement serviceAbonnement = new ServiceAbonnement();
             ObservableList<abonnement> abonnements= FXCollections.observableArrayList(serviceAbonnement.afficher());
-
+            System.out.println(abonnements);
             tv_abonnement.setItems(abonnements);
             col_idabonnement.setCellValueFactory(new PropertyValueFactory<>("idAbonnement"));
             col_iduser.setCellValueFactory(new PropertyValueFactory<>("userID"));

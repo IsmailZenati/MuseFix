@@ -21,7 +21,6 @@ public class ModifierPackController {
     void modifierPack(ActionEvent event) {
         int packId = Integer.parseInt(tf_packId.getText());
         try {
-            // Votre logique pour modifier le pack ici
             servicePack.modifier(new packs());
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

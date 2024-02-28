@@ -22,21 +22,42 @@ public class ModifierAbonnementController {
 
     @FXML
     private Button btnModify;
+    @FXML
+    private TextField tf_date1; // Declare tf_date1
 
     @FXML
-    void modifierAbonnement(ActionEvent event) {
+    private TextField tf_date2;
+    @FXML
+     void modifierAbonnement(ActionEvent event) { try {
         int subscriptionId = Integer.parseInt(tf_subscriptionId.getText());
-        try {
-            // Votre logique pour modifier l'abonnement ici
-            serviceAbonnement.modifier(new abonnement());
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setContentText("Abonnement modifié");
-            alert.showAndWait();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
+
+        // Récupérer les valeurs des champs de texte tf_date1 et tf_date2
+        java.sql.Date dateDeb = java.sql.Date.valueOf(tf_date1.getText());
+        java.sql.Date dateFin = java.sql.Date.valueOf(tf_date2.getText());
+
+        // Appel de la méthode modifier du service ServiceAbonnement
+        serviceAbonnement.modifier(new abonnement(subscriptionId, dateDeb, dateFin));
+
+        // Affichage d'un message d'alerte de succès
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Success");
+        alert.setContentText("Abonnement modifié");
+        alert.showAndWait();
+    } catch (NumberFormatException e) {
+        // Gérer les exceptions liées à la conversion du texte en entier
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText("Invalid input for subscription ID");
+        alert.showAndWait();
+    } catch (SQLException e) {
+        // Gérer les exceptions liées à la base de données
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setContentText("An error occurred while modifying the subscription");
+        alert.showAndWait();
     }
+    }
+
 
     @FXML
     void supprimerAbonnement(ActionEvent event) {

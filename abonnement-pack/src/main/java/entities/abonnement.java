@@ -1,6 +1,6 @@
 package entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 
 
@@ -10,7 +10,14 @@ public class abonnement {
 
 public abonnement() {
 }
-public abonnement(  int  IdAbonnement , int userId , int IdPack ,Date dateDeb, Date dateFin){
+
+    public abonnement(int idAbonnement, Date dateDeb, Date dateFin) {
+        this.IdAbonnement = idAbonnement;
+        this.dateDeb = dateDeb;
+        this.dateFin = dateFin;
+    }
+
+    public abonnement(int  IdAbonnement , int userId , int IdPack , Date dateDeb, Date dateFin){
  this.IdAbonnement=IdAbonnement;
  this.userId=userId;
  this.IdPack = IdPack ;

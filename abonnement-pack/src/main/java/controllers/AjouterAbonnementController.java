@@ -1,7 +1,11 @@
 package controllers;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 import javafx.scene.Parent;
 import entities.abonnement;
 import javafx.event.ActionEvent;
@@ -43,8 +47,20 @@ ServiceAbonnement serviceAbonnement=new ServiceAbonnement();
 
 
     public void AjouterAbonnement(ActionEvent actionEvent) {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        Date startDate = null;
+        Date endDate = null;
+
         try {
-            serviceAbonnement.ajouter(new abonnement());
+            startDate = new Date(sdf.parse(tf_startdate.getText()).getTime());
+            endDate = new Date(sdf.parse(tf_enddate.getText()).getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        try {
+            serviceAbonnement.ajouter(new abonnement(
+                  Integer.parseInt(tf_userid.getText()), Integer.parseInt(tf_idpack.getText()),startDate ,endDate));
+
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("success");
             alert.setContentText("abonnement ajouté");

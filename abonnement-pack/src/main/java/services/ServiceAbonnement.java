@@ -28,13 +28,12 @@ public class ServiceAbonnement implements IService<abonnement> {
     }
 
     public void modifier(abonnement abonnement) throws SQLException {
-        String req = "UPDATE abonnement SET userId = ?, idPack = ?, dateDeb = ?, dateFin = ? WHERE IdAbonnement = ?";
+        String req = "UPDATE abonnement SET dateDeb = ?, dateFin = ? WHERE IdAbonnement = ?";
         PreparedStatement ps = connection.prepareStatement(req);
-        ps.setInt(1, abonnement.getUserId());
-        ps.setInt(2, abonnement.getIdPack());
-        ps.setDate(3, abonnement.getDateDeb());
-        ps.setDate(4, abonnement.getDateFin());
-        ps.setInt(5, abonnement.getIdAbonnement());
+
+        ps.setDate(1, abonnement.getDateDeb());
+        ps.setDate(2, abonnement.getDateFin());
+        ps.setInt(3, abonnement.getIdAbonnement());
         ps.executeUpdate();
         System.out.println("abonnement modifié");
     }
@@ -57,7 +56,7 @@ public class ServiceAbonnement implements IService<abonnement> {
             while (resultSet.next()) {
                 abonnement ab = new abonnement();
                 ab.setIdAbonnement(resultSet.getInt("IdAbonnement"));
-                ab.setUserId(resultSet.getInt("userId"));
+                ab.setUserId(resultSet.getInt("userID"));
                 ab.setIdPack(resultSet.getInt("idPack"));
                 ab.setDateDeb(resultSet.getDate("dateDeb"));
                 ab.setDateFin(resultSet.getDate("dateFin"));

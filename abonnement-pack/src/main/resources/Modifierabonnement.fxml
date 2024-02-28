@@ -24,7 +24,7 @@
                   <Glow />
                </effect>
             </Text>
-            <Text fill="WHITE" layoutX="162.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage your Subscription :">
+            <Text fill="WHITE" layoutX="162.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage your Subscription :">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -32,22 +32,22 @@
                   <Blend />
                </effect>
             </Text>
-            <Label layoutX="27.0" layoutY="324.0" text="Delete Subscription" textFill="WHITE">
+            <Label layoutX="35.0" layoutY="227.0" text="Delete Subscription" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="355.0" layoutY="324.0" text="Modify Subscription" textFill="WHITE">
+            <Label layoutX="120.0" layoutY="282.0" text="Modify Subscription" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
             </Label>
-            <Label layoutX="96.0" layoutY="233.0" text="Enter your Subscription ID :" textFill="WHITE">
+            <Label layoutX="50.0" layoutY="175.0" text="Enter your Subscription ID :" textFill="WHITE">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="tf_subscriptionId" layoutX="471.0" layoutY="234.0" prefHeight="26.0" prefWidth="70.0" style="-fx-background-radius: 2em;">
+            <TextField fx:id="tf_subscriptionId" layoutX="463.0" layoutY="176.0" prefHeight="26.0" prefWidth="70.0" style="-fx-background-radius: 2em;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -55,16 +55,18 @@
                   <Reflection />
                </effect>
             </TextField>
-            <Button layoutX="116.0" layoutY="378.0" mnemonicParsing="false" onAction="#supprimerAbonnement" text="Delete">
+            <Button layoutX="302.0" layoutY="225.0" mnemonicParsing="false" onAction="#supprimerAbonnement" text="Delete">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="438.0" layoutY="378.0" mnemonicParsing="false" onAction="#modifierAbonnement" text="Modify">
+            <Button layoutX="410.0" layoutY="280.0" mnemonicParsing="false" onAction="#modifierAbonnement" text="Modify">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
+            <TextField fx:id="tf_date1" layoutX="120.0" layoutY="353.0" prefHeight="26.0" prefWidth="139.0" />
+            <TextField fx:id="tf_date2" layoutX="371.0" layoutY="354.0" />
          </children>
          <effect>
             <SepiaTone />

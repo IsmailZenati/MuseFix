@@ -5,34 +5,37 @@ import entities.packs;
 import services.ServiceAbonnement;
 import services.ServicePack;
 
-import java.sql.Date;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.sql.Date;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        ServiceAbonnement serviceAbonnement= new ServiceAbonnement();
+        ServiceAbonnement serviceAbonnement = new ServiceAbonnement();
         ServicePack servicePacks = new ServicePack();
 
-        Date date = Date.valueOf("2024-11-05");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
         try {
-        abonnement a1= new abonnement(8,2,date,date);
-        packs p1=new packs("PackPremium" ,40.50F ,"accées globale");
-            //packs p2=new packs("fruit", 35.60F, "banane" );
-        //packs p3=new packs("melon",12.5F,"bonne"  );
-           serviceAbonnement.ajouter(a1);
-            servicePacks.ajouter(p1);
-           System.out.println(serviceAbonnement.afficher());
+            // Create dates
+            Date startDate = Date.valueOf("2015-07-12");
+            Date endDate = Date.valueOf("2018-02-10");
 
-           // servicePacks.modifier(new packs("performant","wasze", 2, 14.5F));
-         //servicePacks.ajouter(p2);
-           //  servicePacks.ajouter(p3);
-             System.out.println(servicePacks.afficher());
+            // Create an abonnement object
+            abonnement a = new abonnement(12, startDate, endDate);
 
+            // Add the abonnement
+            serviceAbonnement.modifier(a);
 
-        }
-        catch (SQLException e){
+            // Afficher the list of abonnements
+            List<abonnement> abonnements = serviceAbonnement.afficher();
+            for (abonnement ab : abonnements) {
+                System.out.println(ab);
+            }
+        } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
-
     }
 }
