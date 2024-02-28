@@ -28,33 +28,45 @@ public class ModifierAbonnementController {
     @FXML
     private TextField tf_date2;
     @FXML
-     void modifierAbonnement(ActionEvent event) { try {
-        int subscriptionId = Integer.parseInt(tf_subscriptionId.getText());
+     void modifierAbonnement(ActionEvent event) {
+        try {
+            int subscriptionId = Integer.parseInt(tf_subscriptionId.getText());
 
-        // Récupérer les valeurs des champs de texte tf_date1 et tf_date2
-        java.sql.Date dateDeb = java.sql.Date.valueOf(tf_date1.getText());
-        java.sql.Date dateFin = java.sql.Date.valueOf(tf_date2.getText());
+            // Check if the text fields are not empty
+            if (tf_date1.getText().isEmpty() || tf_date2.getText().isEmpty()) {
+                throw new IllegalArgumentException("Date fields cannot be empty");
+            }
 
-        // Appel de la méthode modifier du service ServiceAbonnement
-        serviceAbonnement.modifier(new abonnement(subscriptionId, dateDeb, dateFin));
+            // Récupérer les valeurs des champs de texte tf_date1 et tf_date2
+            java.sql.Date dateDeb = java.sql.Date.valueOf(tf_date1.getText());
+            java.sql.Date dateFin = java.sql.Date.valueOf(tf_date2.getText());
 
-        // Affichage d'un message d'alerte de succès
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Success");
-        alert.setContentText("Abonnement modifié");
-        alert.showAndWait();
-    } catch (NumberFormatException e) {
-        // Gérer les exceptions liées à la conversion du texte en entier
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setContentText("Invalid input for subscription ID");
-        alert.showAndWait();
-    } catch (SQLException e) {
-        // Gérer les exceptions liées à la base de données
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
-        alert.setContentText("An error occurred while modifying the subscription");
-        alert.showAndWait();
+            // Appel de la méthode modifier du service ServiceAbonnement
+            serviceAbonnement.modifier(new abonnement(subscriptionId, dateDeb, dateFin));
+
+            // Affichage d'un message d'alerte de succès
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setContentText("Abonnement modifié");
+            alert.showAndWait();
+        } catch (NumberFormatException e) {
+            // Gérer les exceptions liées à la conversion du texte en entier
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Invalid input for subscription ID");
+            alert.showAndWait();
+        } catch (IllegalArgumentException e) {
+            // Gérer les exceptions liées aux champs de date vides ou invalides
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("Invalid date format or empty date fields");
+            alert.showAndWait();
+        } catch (SQLException e) {
+            // Gérer les exceptions liées à la base de données
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setContentText("An error occurred while modifying the subscription");
+            alert.showAndWait();
     }
     }
 
