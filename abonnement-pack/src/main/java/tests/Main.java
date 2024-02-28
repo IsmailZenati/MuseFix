@@ -15,8 +15,8 @@ public class Main {
 
         Date date = Date.valueOf("2024-11-05");
         try {
-        abonnement a1= new abonnement(5,2,date,date);
-        packs p1=new packs("lambadouza" ,30.50F ,"sha9fa");
+        abonnement a1= new abonnement(8,2,date,date);
+        packs p1=new packs("PackPremium" ,40.50F ,"accées globale");
             //packs p2=new packs("fruit", 35.60F, "banane" );
         //packs p3=new packs("melon",12.5F,"bonne"  );
            serviceAbonnement.ajouter(a1);

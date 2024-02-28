@@ -15,6 +15,7 @@ public class ServiceAbonnement implements IService<abonnement> {
     }
 
     public void ajouter(abonnement abonnement) throws SQLException {
+
         String req = "INSERT INTO abonnement (userId, idPack, dateDeb, dateFin) " +
                 "VALUES (?, ?, ?, ?)";
         PreparedStatement ps = connection.prepareStatement(req);

@@ -16,8 +16,8 @@ public class MainFX extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/AjouterPack.fxml"));
-        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/AfficherPack.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/AjouterAbonnement.fxml"));
+        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/AfficherAbonnement.fxml"));
         try {
             Parent root = fxmlLoader.load();
             Parent root2 = fxmlLoader2.load();
@@ -26,12 +26,12 @@ public class MainFX extends Application {
             Scene scene2 = new Scene(root2);
 
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Gestion de Packs");
+            primaryStage.setTitle("Gestion abonnements");
             primaryStage.show();
 
             Stage secondaryStage = new Stage();
             secondaryStage.setScene(scene2);
-            secondaryStage.setTitle("Gestion de packs");
+            secondaryStage.setTitle("Affichage  abonnements");
             secondaryStage.show();
 
         } catch (IOException e) {
