@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #00dcff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #00dcff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifierPackController">
    <children>
       <AnchorPane layoutX="35.0" layoutY="31.0" prefHeight="438.0" prefWidth="630.0" style="-fx-background-color: black; -fx-background-radius: 90;">
          <children>
@@ -30,7 +30,7 @@
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
             </Label>
-            <TextField layoutX="426.0" layoutY="228.0" prefHeight="26.0" prefWidth="67.0" style="-fx-background-radius: 2em;">
+            <TextField fx:id="tf_packId" layoutX="426.0" layoutY="228.0" prefHeight="26.0" prefWidth="67.0" style="-fx-background-radius: 2em;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -54,12 +54,12 @@
                   <Blend />
                </effect>
             </Text>
-            <Button layoutX="112.0" layoutY="365.0" mnemonicParsing="false" text="Delete">
+            <Button layoutX="112.0" layoutY="365.0" mnemonicParsing="false" onAction="#supprimerPack" text="Delete">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <Button layoutX="434.0" layoutY="368.0" mnemonicParsing="false" text="Modify">
+            <Button layoutX="434.0" layoutY="368.0" mnemonicParsing="false" onAction="#modifierPack" text="Modify">
                <font>
                   <Font name="Arial Black" size="14.0" />
                </font>
