@@ -33,7 +33,6 @@ public class ServicePack implements IService<packs> {
             preparedStatement.setString(1, pack.getTypePack());
             preparedStatement.setFloat(2, pack.getPrix());
             preparedStatement.setString(3, pack.getAvantages());
-            preparedStatement.setInt(4,pack.getIdPack());
             preparedStatement.executeUpdate();
             System.out.println("Pack modifié");
 

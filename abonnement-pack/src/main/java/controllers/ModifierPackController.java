@@ -35,7 +35,7 @@ public class ModifierPackController {
             String avantages = tf_avantages.getText();
 
             // Appel de la méthode ajouter du service ServicePack
-            servicePack.ajouter(new packs(typePack, (float) prix, avantages));
+            servicePack.modifier(new packs(typePack, (float) prix, avantages));
 
             // Affichage d'un message d'alerte de succès
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
