@@ -34,22 +34,21 @@ public class ModifierPackController {
             double prix = Double.parseDouble(tf_prix.getText());
             String avantages = tf_avantages.getText();
 
-            // Appel de la méthode ajouter du service ServicePack
-            servicePack.modifier(new packs(typePack, (float) prix, avantages));
+            servicePack.modifier(new packs(typePack,(float) prix, avantages));
 
-            // Affichage d'un message d'alerte de succès
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("Pack modifié");
             alert.showAndWait();
         } catch (NumberFormatException e) {
-            // Gérer les exceptions liées à la conversion des valeurs
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Invalid input for price");
             alert.showAndWait();
         } catch (SQLException e) {
-            // Gérer les exceptions liées à la base de données
+
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("An error occurred while adding the pack");
@@ -60,7 +59,6 @@ public class ModifierPackController {
     void supprimerPack(ActionEvent event) {
         int packId = Integer.parseInt(tf_packId.getText());
         try {
-            // Votre logique pour supprimer le pack ici
             servicePack.supprimer(packId);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="eighth subscription commit">
+    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="nineth subscription commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/ModifierAbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/ModifierAbonnementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/ModifierPackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/ModifierPackController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/services/ServicePack.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/services/ServicePack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/MainFX.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -79,7 +80,7 @@
       <workItem from="1709023111771" duration="290000" />
       <workItem from="1709023481355" duration="150000" />
       <workItem from="1709023655982" duration="32485000" />
-      <workItem from="1709075504174" duration="20741000" />
+      <workItem from="1709075504174" duration="24930000" />
     </task>
     <task id="LOCAL-00001" summary="First subscription commit 1.00">
       <option name="closed" value="true" />
@@ -177,7 +178,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709160058673</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="nineth subscription commit">
+      <option name="closed" value="true" />
+      <created>1709161765464</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1709161765464</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +201,7 @@
     <MESSAGE value="sixth subscription commit" />
     <MESSAGE value="seventh subscription commit" />
     <MESSAGE value="eighth subscription commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="eighth subscription commit" />
+    <MESSAGE value="nineth subscription commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="nineth subscription commit" />
   </component>
 </project>

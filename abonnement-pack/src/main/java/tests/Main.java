@@ -19,17 +19,17 @@ public class Main {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
         try {
-            // Create dates
+            // Creer les dates
             Date startDate = Date.valueOf("2015-07-12");
             Date endDate = Date.valueOf("2018-02-10");
 
-            // Create an abonnement object
+            // creer un objet abonnement
             abonnement a = new abonnement(12, startDate, endDate);
 
-            // Add the abonnement
+            // ajouter un  abonnement
             serviceAbonnement.modifier(a);
 
-            // Afficher the list of abonnements
+            // afficher la liste des abonnements
             List<abonnement> abonnements = serviceAbonnement.afficher();
             for (abonnement ab : abonnements) {
                 System.out.println(ab);

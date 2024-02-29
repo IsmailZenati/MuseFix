@@ -50,19 +50,19 @@ public class ModifierAbonnementController {
             alert.setContentText("Abonnement modifié");
             alert.showAndWait();
         } catch (NumberFormatException e) {
-            // Gérer les exceptions liées à la conversion du texte en entier
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Invalid input for subscription ID");
             alert.showAndWait();
         } catch (IllegalArgumentException e) {
-            // Gérer les exceptions liées aux champs de date vides ou invalides
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("Invalid date format or empty date fields");
             alert.showAndWait();
         } catch (SQLException e) {
-            // Gérer les exceptions liées à la base de données
+
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setContentText("An error occurred while modifying the subscription");
@@ -75,7 +75,7 @@ public class ModifierAbonnementController {
     void supprimerAbonnement(ActionEvent event) {
         int subscriptionId = Integer.parseInt(tf_subscriptionId.getText());
         try {
-            // Votre logique pour supprimer l'abonnement ici
+
             serviceAbonnement.supprimer(subscriptionId);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
