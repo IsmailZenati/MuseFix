@@ -26,12 +26,12 @@ public class MainFX extends Application {
             Scene scene2 = new Scene(root2);
 
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Ajouter les abonnements");
+            primaryStage.setTitle("Ajouter les packs ");
             primaryStage.show();
 
             Stage secondaryStage = new Stage();
             secondaryStage.setScene(scene2);
-            secondaryStage.setTitle(" Modifier les abonnements");
+            secondaryStage.setTitle(" Modifier les packs");
             secondaryStage.show();
 
         } catch (IOException e) {

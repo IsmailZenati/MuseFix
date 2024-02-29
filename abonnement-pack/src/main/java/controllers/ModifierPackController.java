@@ -31,28 +31,18 @@ public class ModifierPackController {
         int packId = Integer.parseInt(tf_packId.getText());
         try {
             String typePack = tf_typepack.getText();
-            double prix = Double.parseDouble(tf_prix.getText());
+             float prix = Float.parseFloat((tf_prix.getText()));
             String avantages = tf_avantages.getText();
 
-            servicePack.modifier(new packs(typePack,(float) prix, avantages));
+            servicePack.modifier(new packs(packId,typePack, prix, avantages));
 
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Success");
             alert.setContentText("Pack modifié");
             alert.showAndWait();
-        } catch (NumberFormatException e) {
 
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText("Invalid input for price");
-            alert.showAndWait();
         } catch (SQLException e) {
-
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error");
-            alert.setContentText("An error occurred while adding the pack");
-            alert.showAndWait();
+            throw new RuntimeException(e);
         }
     }
     @FXML

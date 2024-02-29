@@ -43,7 +43,7 @@ public class packs {
         this.avantages=avantages;
     }
 
-    public packs(String avantages, String typePack, Integer idPack, Float prix) {
+    public packs(int idPack , String typePack , float prix , String avantages) {
         this.avantages = avantages;
         this.typePack = typePack;
        this.IdPack = idPack;
