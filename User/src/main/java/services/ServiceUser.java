@@ -2,7 +2,8 @@ package services;
 
 import entities.User;
 import utils.MyDatabase;
-
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -11,34 +12,58 @@ import java.util.Date;
 
 
 public class ServiceUser implements  IService<User>{
+    private final Decryptor decryptor = new Decryptor();
+
+
     Connection connection;
     public ServiceUser(){
         connection= MyDatabase.getInstance().getConnection();
 
     }
-
+    private String encryptPassword(String password) throws NoSuchAlgorithmException {
+        MessageDigest md = MessageDigest.getInstance("MD5");
+        md.update(password.getBytes());
+        byte[] bytes = md.digest();
+        StringBuilder sb = new StringBuilder();
+        for (byte aByte : bytes) {
+            sb.append(Integer.toString((aByte & 0xff) + 0x100, 16).substring(1));
+        }
+        return sb.toString();
+    }
 
     @Override
     public void ajouter(User user) throws SQLException {
-        // Using a prepared statement to avoid SQL injection
-        String req ="insert into user (nom,prenom,email,passwd,signUpDate,role,adresse,tel)"+
-                "values(?,?,?,?,?,?,?,?)";
-        PreparedStatement ps = connection.prepareStatement(req);
+        try {
+            // Using a prepared statement to avoid SQL injection
+            String req = "insert into user (nom,prenom,email,passwd,signUpDate,role,adresse,tel)" +
+                    "values(?,?,?,?,?,?,?,?)";
+            PreparedStatement ps = connection.prepareStatement(req);
 
-        // Setting values for the prepared statement
-        ps.setString(1, user.getNom());
-        ps.setString(2, user.getPrenom());
-        ps.setString(3, user.getEmail());
-        ps.setString(4, user.getPassword());
-        ps.setTimestamp(5, new Timestamp(user.getSignupDate().getTime())); // Convert Date to Timestamp for database compatibility
-        ps.setString(6, user.getRole());
-        ps.setString(7, user.getAdresse());
-        ps.setInt(8, user.getTel());
+            // Setting values for the prepared statement
+            ps.setString(1, user.getNom());
+            ps.setString(2, user.getPrenom());
+            ps.setString(3, user.getEmail());
+            try {
+                ps.setString(4, encryptPassword(user.getPassword()));
 
-        // Execute the prepared statement
-        ps.executeUpdate();
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
 
-        System.out.println("User ajouté");
+            ps.setTimestamp(5, new Timestamp(user.getSignupDate().getTime())); // Convert Date to Timestamp for database compatibility
+            ps.setString(6, user.getRole());
+            ps.setString(7, user.getAdresse());
+            ps.setInt(8, user.getTel());
+
+            // Execute the prepared statement
+            ps.executeUpdate();
+
+            System.out.println("User ajouté");
+        } catch (SQLException e) {
+            e.printStackTrace();
+            // Handle the SQLException as needed
+            throw e; // Rethrow the exception after handling
+        }
     }
     @Override
     public void modifier(User user) throws SQLException {
@@ -47,7 +72,12 @@ public class ServiceUser implements  IService<User>{
         ps.setString(1, user.getNom());
         ps.setString(2, user.getPrenom());
         ps.setString(3, user.getEmail());
-        ps.setString(4, user.getPassword());
+        try {
+            ps.setString(4, encryptPassword(user.getPassword()));
+
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         ps.setDate(5, new java.sql.Date(user.getSignupDate().getTime()));
         ps.setString(6, user.getRole());
         ps.setString(7, user.getAdresse());
@@ -82,7 +112,12 @@ System.out.println("Personne supprimée");
                 u.setNom(rs.getString("nom"));
                 u.setPrenom(rs.getString("prenom"));
                 u.setEmail(rs.getString("email"));
-                u.setPassword(rs.getString("passwd"));
+                u.setPassword(rs.getString("passwd")); // Retrieve the hashed password from the database
+                try {
+                    u.setDecryptedPassword(decryptor.decryptString(u.getPassword())); // Decrypt password
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                }
                 u.setRole(rs.getString("role"));
                 u.setAdresse(rs.getString("adresse"));
                 u.setTel(rs.getInt("tel"));
@@ -101,6 +136,6 @@ System.out.println("Personne supprimée");
         }
 
         return users;
-    }
+    }}
 
-}
+

@@ -1,5 +1,4 @@
 package controllers;
-
 import entities.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -7,10 +6,12 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import services.ServiceUser;
-
+import services.Encryptor;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 public class AjouterUserController {
+    private final Encryptor encryptor = new Encryptor();
 
     private final ServiceUser serviceUser = new ServiceUser();
 
@@ -45,7 +46,9 @@ public class AjouterUserController {
             newUser.setEmail(tf_email.getText());
             newUser.setNom(tf_nom.getText());
             newUser.setPrenom(tf_prenom.getText());
-            newUser.setPassword(tf_password.getText());
+
+// Inside your method where you want to encrypt a password
+            String encryptedPassword = encryptor.encryptString(tf_password.getText());            newUser.setPassword(encryptedPassword); // Encrypt the password
             newUser.setRole(tf_role.getText());
             newUser.setAdresse(tf_adresse.getText());
             newUser.setTel(Integer.parseInt(tf_tel.getText()));
@@ -56,6 +59,8 @@ public class AjouterUserController {
             showAlert("Error", "Erreur lors de l'ajout de la personne: " + e.getMessage());
         } catch (NumberFormatException e) {
             showAlert("Error", "Veuillez saisir un numéro de téléphone valide.");
+        } catch (NoSuchAlgorithmException e) {
+            showAlert("Error", "Erreur lors de l'encryption du mot de passe: " + e.getMessage());
         }
     }
 

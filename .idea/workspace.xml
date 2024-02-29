@@ -5,13 +5,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="Crud with interface rev 0.1">
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/controllers/ModifierUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/Decryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/Encryptor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/ModifierUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/controllers/AfficherUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/controllers/AfficherUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/controllers/AjouterUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/controllers/AjouterUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/entities/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/services/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/services/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/services/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/services/ServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/resources/AfficherUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/resources/AfficherUser.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -47,27 +66,35 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "User",
-    "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "C:/wamp64/www/MuseFix",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.5011494",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;User&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/whove/Downloads/577c7bb58942e99df2771515c1e00c2d-f3356ce202ecd131da5c52597d4e940d28f17f96/577c7bb58942e99df2771515c1e00c2d-f3356ce202ecd131da5c52597d4e940d28f17f96&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5011494&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RunManager" selected="Application.MainFX">
+    <configuration name="MainFX" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="tests.MainFX" />
+      <module name="User" />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\JavaFX\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <module name="MuseFix" />
       <method v="2">
@@ -81,6 +108,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="User" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/User" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Application.MainFX" />
+      <item itemvalue="Maven.User" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,6 +154,10 @@
       <workItem from="1708966102115" duration="81000" />
       <workItem from="1708966192036" duration="697000" />
       <workItem from="1708966900525" duration="346000" />
+      <workItem from="1709134719073" duration="3554000" />
+      <workItem from="1709202339825" duration="4547000" />
+      <workItem from="1709220254049" duration="2394000" />
+      <workItem from="1709241604821" duration="5324000" />
     </task>
     <task id="LOCAL-00001" summary="User crud commit 1.00">
       <option name="closed" value="true" />
@@ -121,7 +183,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708966797609</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Crud with interface rev 0.1">
+      <option name="closed" value="true" />
+      <created>1709134903659</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709134903659</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +212,7 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="User crud commit 1.00" />
     <MESSAGE value="User crud commit 1.01" />
-    <option name="LAST_COMMIT_MESSAGE" value="User crud commit 1.01" />
+    <MESSAGE value="Crud with interface rev 0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud with interface rev 0.1" />
   </component>
 </project>
