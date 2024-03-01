@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #00dcff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifierCelebriteController">
+    <children>
+        <AnchorPane layoutX="28.0" layoutY="20.0" prefHeight="453.0" prefWidth="643.0" style="-fx-background-color: black; -fx-background-radius: 90;">
+            <children>
+                <Text fill="WHITE" layoutX="190.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Manage your Celebrite :">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+
+                </Text>
+                <Label layoutX="97.0" layoutY="398.0" text="Delete Celebrite" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="415.0" layoutY="398.0" text="Modify Celebrite" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="60.0" layoutY="73.0" text="Enter your Celebrite ID :" textFill="WHITE">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tf_idCelebrite" layoutX="414.0" layoutY="74.0" prefHeight="26.0" prefWidth="70.0" style="-fx-background-radius: 2em;">
+                    <cursor>
+                        <Cursor fx:constant="TEXT" />
+                    </cursor>
+                </TextField>
+            <Button fx:id="deleteCelebrite" layoutX="38.0" layoutY="400.0" mnemonicParsing="false" text="Delete" />
+            <Button fx:id="modifierCelebrite" layoutX="353.0" layoutY="400.0" mnemonicParsing="false" text="Modify" />
+            <TextField fx:id="tf_nom" alignment="CENTER" layoutX="354.0" layoutY="123.0" prefHeight="39.0" prefWidth="190.0" promptText="nom" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tf_nationalite" alignment="CENTER" layoutX="354.0" layoutY="265.0" prefHeight="38.0" prefWidth="190.0" promptText="nationalite" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tf_profession" alignment="CENTER" layoutX="354.0" layoutY="336.0" prefHeight="38.0" prefWidth="190.0" promptText="profession" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="200.0" layoutY="129.0" style="-fx-font-weight: bold;" text="nom :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="181.0" layoutY="198.0" style="-fx-font-weight: bold;" text="dateNais :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="173.0" layoutY="270.0" style="-fx-font-weight: bold;" text="nationalite :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="174.0" layoutY="341.0" style="-fx-font-weight: bold;" text="profession :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_dateNais" alignment="CENTER" layoutX="354.0" layoutY="193.0" prefHeight="38.0" prefWidth="190.0" promptText="yyyy-MM-dd HH:mm:ss" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Button fx:id="goToAjouterCelebriteButton" layoutX="47.0" layoutY="25.0" mnemonicParsing="false" onAction="#goToAjouterCelebrite" text="Celebrite" />
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

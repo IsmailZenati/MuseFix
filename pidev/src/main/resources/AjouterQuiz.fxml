@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #00dcff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AjouterQuizController">
+   <left>
+      <AnchorPane prefHeight="500.0" prefWidth="261.0" style="-fx-background-color: #00dcff;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#9e4805" layoutX="80.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20; -fx-font-weight: bold; -fx-font-family: &quot;Gill Sans&quot;, sans-serif;" text="MADE BY :" textAlignment="CENTER">
+               <font>
+                  <Font name="Broadway" size="12.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="10.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 23; -fx-font-family: serif;" text="ULTIMATE DYNASTY" wrappingWidth="245.18841516971588" />
+            <Text fill="WHITE" layoutX="30.0" layoutY="471.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 15;" text="ultimateDynasty@support.com" underline="true" />
+            <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Downloads/logo.png" />
+               </image></ImageView>
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="500.0" prefWidth="453.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="tf_titre" alignment="CENTER" layoutX="206.0" layoutY="145.0" prefHeight="39.0" prefWidth="190.0" promptText="titre " style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tf_description" alignment="CENTER" layoutX="207.0" layoutY="203.0" prefHeight="40.0" prefWidth="190.0" promptText="description " style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tf_difficulte" alignment="CENTER" layoutX="206.0" layoutY="262.0" prefHeight="38.0" prefWidth="190.0" promptText="difficulte " style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="tf_idCelebrite" alignment="CENTER" layoutX="206.0" layoutY="320.0" prefHeight="38.0" prefWidth="190.0" promptText="idCelebrite :" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+
+            <Label layoutX="55.0" layoutY="151.0" style="-fx-font-weight: bold;" text="titre :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="209.0" style="-fx-font-weight: bold;" text="description :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="33.0" layoutY="267.0" style="-fx-font-weight: bold;" text="difficulte :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="325.0" style="-fx-font-weight: bold;" text="idCelebrite :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Text blendMode="SRC_ATOP" fill="WHITE" fontSmoothingType="LCD" layoutX="100.0" layoutY="52.0" mouseTransparent="true" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 40px; -fx-font-family: Arial;" text="Ajouter Quiz">
+               <effect>
+                  <Bloom />
+               </effect>
+            </Text>
+            <ImageView fitHeight="272.0" fitWidth="200.0" layoutX="42.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" visible="false">
+            </ImageView>
+            <Button layoutX="79.0" layoutY="446.0" mnemonicParsing="false" onAction="#AjouterQuiz" text="Ajouter" />
+            <Button layoutX="299.0" layoutY="446.0" mnemonicParsing="false" onAction="#AfficherQuiz" text="Afficher" />
+            <TextField fx:id="tf_DateCreation" alignment="CENTER" layoutX="206.0" layoutY="377.0" prefHeight="38.0" prefWidth="190.0" promptText="yyyy-MM-dd HH:mm:ss" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="25.0" layoutY="382.0" style="-fx-font-weight: bold;" text="DateCreation" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tf_idQuiz" alignment="CENTER" layoutX="206.0" layoutY="86.0" prefHeight="39.0" prefWidth="190.0" promptText="idQuiz" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="55.0" layoutY="92.0" style="-fx-font-weight: bold;" text="idQuiz :" textFill="WHITE">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Button layoutX="191.0" layoutY="446.0" mnemonicParsing="false" onAction="#ModifierQuiz" text="Modify" />
+            <Button fx:id="goToAjouterCelebriteButton" layoutX="333.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToAjouterCelebrite" text="Celebrite" />
+
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
