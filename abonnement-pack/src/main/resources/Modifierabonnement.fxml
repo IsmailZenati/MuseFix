@@ -65,8 +65,8 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="tf_date1" layoutX="120.0" layoutY="353.0" prefHeight="26.0" prefWidth="139.0" />
-            <TextField fx:id="tf_date2" layoutX="371.0" layoutY="354.0" />
+            <TextField fx:id="tf_date1" layoutX="120.0" layoutY="353.0" prefHeight="26.0" prefWidth="139.0" promptText="enter Startdate" />
+            <TextField fx:id="tf_date2" layoutX="371.0" layoutY="354.0" promptText="enter endDate" />
          </children>
          <effect>
             <SepiaTone />

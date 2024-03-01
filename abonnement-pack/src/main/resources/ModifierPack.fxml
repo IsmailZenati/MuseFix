@@ -64,9 +64,9 @@
                   <Font name="Arial Black" size="14.0" />
                </font>
             </Button>
-            <TextField fx:id="tf_typepack" layoutX="77.0" layoutY="359.0" prefHeight="26.0" prefWidth="120.0" />
-            <TextField fx:id="tf_prix" layoutX="262.0" layoutY="359.0" />
-            <TextField fx:id="tf_avantages" layoutX="450.0" layoutY="359.0" />
+            <TextField fx:id="tf_typepack" layoutX="77.0" layoutY="359.0" prefHeight="26.0" prefWidth="120.0" promptText="enter Type" />
+            <TextField fx:id="tf_prix" layoutX="262.0" layoutY="359.0" promptText="Enter Price" />
+            <TextField fx:id="tf_avantages" layoutX="450.0" layoutY="359.0" promptText="Enter advantage" />
          </children>
       </AnchorPane>
    </children>
