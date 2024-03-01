@@ -81,7 +81,6 @@
             <ImageView fitHeight="272.0" fitWidth="200.0" layoutX="42.0" layoutY="55.0" pickOnBounds="true" preserveRatio="true" visible="false">
             </ImageView>
             <Button layoutX="79.0" layoutY="446.0" mnemonicParsing="false" onAction="#AjouterQuiz" text="Ajouter" />
-            <Button layoutX="299.0" layoutY="446.0" mnemonicParsing="false" onAction="#AfficherQuiz" text="Afficher" />
             <TextField fx:id="tf_DateCreation" alignment="CENTER" layoutX="206.0" layoutY="377.0" prefHeight="38.0" prefWidth="190.0" promptText="yyyy-MM-dd HH:mm:ss" style="-fx-background-radius: 2em;">
                <font>
                   <Font size="14.0" />
@@ -104,6 +103,7 @@
             </Label>
             <Button layoutX="191.0" layoutY="446.0" mnemonicParsing="false" onAction="#ModifierQuiz" text="Modify" />
             <Button fx:id="goToAjouterCelebriteButton" layoutX="333.0" layoutY="26.0" mnemonicParsing="false" onAction="#goToAjouterCelebrite" text="Celebrite" />
+            <Button layoutX="305.0" layoutY="446.0" mnemonicParsing="false" onAction="#AfficherQuiz" text="Afficher" />
 
          </children>
       </AnchorPane>

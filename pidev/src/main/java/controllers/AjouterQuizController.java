@@ -62,7 +62,20 @@ public class AjouterQuizController {
 
     @FXML
     void AfficherQuiz(ActionEvent event) {
-        // Code for navigating to the AfficherQuiz screen
+        try {
+            // Load the FXML file for AfficherQuiz.fxml
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherQuiz.fxml"));
+            Parent afficherRoot = loader.load();
+
+            // Set the AfficherQuiz interface as the root of the scene
+            Scene afficherScene = new Scene(afficherRoot);
+            Stage stage = new Stage();
+            stage.setScene(afficherScene);
+            stage.setTitle("Afficher Quiz");
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
