@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6fffee" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherCommande">
+    <children>
+        <Text layoutX="163.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px;-fx-font-weight: bold" text="Voici le récapitulatif de vos commandes" />
+        <ImageView fitHeight="98.0" fitWidth="154.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../main/java/images/musefix.png" />
+            </image>
+        </ImageView>
+        <ImageView fitHeight="91.0" fitWidth="75.0" layoutX="542.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../main/java/images/commandelogo.png" />
+            </image>
+        </ImageView>
+        <TableView fx:id="tv_commande" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
+            <columns>
+                <TableColumn fx:id="col_userID" editable="false" prefWidth="59.99999922513962" sortable="false" text="userID" visible="false" />
+                <TableColumn fx:id="col_orderDate" prefWidth="124.00000381469727" text="Date de commande" />
+                <TableColumn fx:id="col_status" prefWidth="73.59996032714844" text="Status" />
+                <TableColumn fx:id="col_modedePaiement" prefWidth="93.5999755859375" text="modePaiement" />
+                <TableColumn fx:id="col_adresseLivraison" prefWidth="104.79998779296875" text="AdresseLivraison" />
+                <TableColumn fx:id="col_fraisLivraison" minWidth="0.0" prefWidth="87.20001220703125" text="FraisLivraison" />
+                <TableColumn fx:id="col_total" prefWidth="56.800048828125" text="Total" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>
