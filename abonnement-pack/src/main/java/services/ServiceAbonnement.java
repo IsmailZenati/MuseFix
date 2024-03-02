@@ -65,4 +65,24 @@ public class ServiceAbonnement implements IService<abonnement> {
         }
         return abonnements;
     }
+
+    // Méthode pour vérifier si un UserID existe déjà dans la base de données
+    public boolean isUserIdExists(int userId) throws SQLException {
+        String req = "SELECT COUNT(*) AS count FROM abonnement WHERE userId = ?";
+        PreparedStatement ps = connection.prepareStatement(req);
+        ps.setInt(1, userId);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getInt("count") > 0;
+    }
+
+    // Méthode pour vérifier si un IDPack existe déjà dans la base de données
+    public boolean isPackIdExists(int packId) throws SQLException {
+        String req = "SELECT COUNT(*) AS count FROM abonnement WHERE idPack = ?";
+        PreparedStatement ps = connection.prepareStatement(req);
+        ps.setInt(1, packId);
+        ResultSet rs = ps.executeQuery();
+        rs.next();
+        return rs.getInt("count") > 0;
+    }
 }
