@@ -1,8 +1,15 @@
 package controllers;
 import entities.abonnement;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import services.ServiceAbonnement;
+
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Date;
 
@@ -28,7 +35,7 @@ public class AfficherAbonnementController {
     private TableColumn<abonnement, Integer> col_iduser;
 
     @FXML
-    private TableColumn<abonnement,Integer> col_idpack;
+    private TableColumn<abonnement, Integer> col_idpack;
 
     @FXML
     private TableView<abonnement> tv_abonnement;
@@ -37,7 +44,7 @@ public class AfficherAbonnementController {
     void initialize() {
         try {
             ServiceAbonnement serviceAbonnement = new ServiceAbonnement();
-            ObservableList<abonnement> abonnements= FXCollections.observableArrayList(serviceAbonnement.afficher());
+            ObservableList<abonnement> abonnements = FXCollections.observableArrayList(serviceAbonnement.afficher());
             System.out.println(abonnements);
             tv_abonnement.setItems(abonnements);
             col_idabonnement.setCellValueFactory(new PropertyValueFactory<>("idAbonnement"));
@@ -46,6 +53,29 @@ public class AfficherAbonnementController {
             col_datedebut.setCellValueFactory(new PropertyValueFactory<>("dateDeb"));
             col_datefin.setCellValueFactory(new PropertyValueFactory<>("dateFin"));
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    void modifierabonnement(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Modifierabonnement.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    @FXML
+    void supprimerabonnement(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Modifierabonnement.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }

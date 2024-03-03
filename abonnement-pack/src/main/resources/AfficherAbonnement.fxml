@@ -27,12 +27,12 @@
             <Glow />
          </effect>
       </Text>
-      <Button layoutX="128.0" layoutY="459.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #00dcff; -fx-font-weight: bold; -fx-background-radius: 2em;" text="Modifier Abonnement">
+      <Button layoutX="128.0" layoutY="459.0" mnemonicParsing="false" onAction="#modifierabonnement" prefHeight="26.0" prefWidth="178.0" style="-fx-background-color: #00dcff; -fx-font-weight: bold; -fx-background-radius: 2em;" text="Modifier Abonnement">
          <font>
             <Font size="14.0" />
          </font>
       </Button>
-      <Button layoutX="484.0" layoutY="452.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #00dcff; -fx-font-weight: bold; -fx-background-radius: 2em;" text="Supprimer Abonnement">
+      <Button layoutX="484.0" layoutY="452.0" mnemonicParsing="false" onAction="#supprimerabonnement" prefHeight="30.0" prefWidth="178.0" style="-fx-background-color: #00dcff; -fx-font-weight: bold; -fx-background-radius: 2em;" text="Supprimer Abonnement">
          <font>
             <Font size="14.0" />
          </font>
