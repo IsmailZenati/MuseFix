@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="controllers.AfficherQuizController">
+    <children>
+        <TableView fx:id="tv_quiz" layoutX="18.0" layoutY="113.0" prefHeight="329.0" prefWidth="668.0">
+            <columns>
+                <TableColumn fx:id="col_idQuiz" prefWidth="95.0" text="idQuiz" />
+                <TableColumn fx:id="col_titre" prefWidth="82.0" text="titre" />
+                <TableColumn fx:id="col_description" prefWidth="124.0" text="description" />
+                <TableColumn fx:id="col_difficulte" prefWidth="103.0" text="difficulte" />
+            <TableColumn fx:id="col_dateCreation" prefWidth="176.0" text="dateCreation" />
+            <TableColumn fx:id="col_idCelebrite" prefWidth="87.0" text="idCelebrite" />
+            </columns>
+        </TableView>
+        <Text fill="#00dcff" layoutX="161.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO MUSEFIX">
+            <font>
+                <Font name="Arial Rounded MT Bold" size="36.0" />
+            </font>
+            <effect>
+                <Glow />
+            </effect>
+        </Text>
+    </children>
+</AnchorPane>

@@ -1,0 +1,7 @@
+controllers\AjouterQuizController.class
+controllers\AfficherCelebriteController.class
+controllers\AfficherQuizController.class
+controllers\ModifierQuizController.class
+controllers\ModifierCelebriteController.class
+tests\MainFx.class
+controllers\AjouterCelebriteController.class
