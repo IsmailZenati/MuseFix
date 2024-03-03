@@ -1,5 +1,10 @@
 package controllers;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import services.ServiceAbonnement;
 import entities.packs;
 import javafx.collections.FXCollections;
@@ -8,6 +13,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import services.ServicePack;
+
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class AfficherPackController {
@@ -36,10 +43,33 @@ public class AfficherPackController {
             col_idpack.setCellValueFactory(new PropertyValueFactory<>("idPack"));
             col_typepack.setCellValueFactory(new PropertyValueFactory<>("TypePack"));
             col_prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
-            col_prix.setCellValueFactory((new PropertyValueFactory<>("avantages")));
+            col_avantage.setCellValueFactory((new PropertyValueFactory<>("avantages")));
         } catch (SQLException e) {
             System.out.println(e.getMessage());
 
         }
     }
+    @FXML
+    void modifierpack(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/ModifierPack.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+    @FXML
+    void supprimerpack(ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("/Modifierpack.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
 }

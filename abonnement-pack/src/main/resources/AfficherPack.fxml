@@ -26,12 +26,12 @@
             <Glow />
          </effect>
       </Text>
-      <Button layoutX="616.0" layoutY="195.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="124.0" text="Modifier pack">
+      <Button layoutX="616.0" layoutY="195.0" mnemonicParsing="false" onAction="#modifierpack" prefHeight="30.0" prefWidth="124.0" text="Modifier pack">
          <font>
             <Font name="Arial Rounded MT Bold" size="14.0" />
          </font>
       </Button>
-      <Button layoutX="616.0" layoutY="263.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="124.0" style="-fx-font-weight: bold;" text="Supprimer Pack">
+      <Button layoutX="616.0" layoutY="263.0" mnemonicParsing="false" onAction="#supprimerpack" prefHeight="30.0" prefWidth="124.0" style="-fx-font-weight: bold;" text="Supprimer Pack">
          <font>
             <Font size="14.0" />
          </font>
