@@ -17,7 +17,7 @@ public class MainFX extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/AjouterAbonnement.fxml"));
-        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/Modifierabonnement.fxml"));
+        FXMLLoader fxmlLoader2 = new FXMLLoader(getClass().getResource("/ModifierAbonnement.fxml"));
         try {
             Parent root = fxmlLoader.load();
             Parent root2 = fxmlLoader2.load();

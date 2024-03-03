@@ -13,6 +13,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import services.ServiceAbonnement;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
 
 public class AjouterAbonnementController {
     ServiceAbonnement serviceAbonnement = new ServiceAbonnement();
@@ -32,11 +35,15 @@ public class AjouterAbonnementController {
     @FXML
     void afficherAbonnement(ActionEvent event) {
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/AfficherAbonnement.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/Afficherabonnement.fxml"));
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
     }
+
 
     public void AjouterAbonnement(ActionEvent actionEvent) {
         SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
