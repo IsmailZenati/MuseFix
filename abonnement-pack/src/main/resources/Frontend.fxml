@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #00dcff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FrontendController">
+   <children>
+      <AnchorPane layoutX="15.0" layoutY="16.0" prefHeight="567.0" prefWidth="769.0" style="-fx-background-color: black; -fx-background-radius: 90;">
+         <children>
+            <Text fill="WHITE" layoutX="105.0" layoutY="178.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+            <Text fill="#ffb800" layoutX="85.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Get 3 Months of premium for free ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="36.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="27.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="choisir  le type du pack de music : ">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="24.0" />
+               </font>
+            </Text>
+            <Text fill="#bbeeff" layoutX="258.0" layoutY="197.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enjoy endless add free music ">
+               <font>
+                  <Font name="Arial Nova Cond" size="24.0" />
+               </font>
+            </Text>
+            <Button fx:id="getpremium" layoutX="214.0" layoutY="254.0" mnemonicParsing="false" onAction="#ajouterabonnement" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="get Premium free" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="learnmore" layoutX="450.0" layoutY="252.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="Learn more" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="buypack" layoutX="499.0" layoutY="460.0" mnemonicParsing="false" onAction="#ajouterpack" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #bf212f;" text="buy Pack" textFill="WHITE">
+               <font>
+                  <Font name="Britannic Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <AnchorPane layoutX="97.0" prefHeight="83.0" prefWidth="590.0" style="-fx-background-color: #d89b00; -fx-background-radius: 90;">
+               <children>
+                  <Text fill="WHITE" layoutX="242.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bold;" text="Acceuil">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <Text fill="#edcc6f" layoutX="79.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already subscribed ?">
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="18.0" />
+               </font>
+            </Text>
+            <Text fill="#e10707" layoutX="366.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your  subscription ID:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <TextField layoutX="602.0" layoutY="328.0" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 2em;" />
+            <Button fx:id="confirme" layoutX="450.0" layoutY="368.0" mnemonicParsing="false" onAction="#handleLearnMoreButtonClick" prefHeight="26.0" prefWidth="75.0" style="-fx-background-color: #b3fc07;" text="Confirm" textFill="#fa0707">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font name="Arial Rounded MT Bold" size="14.0" />
+               </font></Button>
+            <!-- Progress Indicator -->
+
+            <ProgressIndicator fx:id="progressindicator" layoutX="258.0" layoutY="254.0" prefHeight="41.0" prefWidth="69.0">
+               <cursor>
+                  <Cursor fx:constant="NONE" />
+               </cursor>
+            </ProgressIndicator>
+            <ProgressIndicator fx:id="progressindicator2" layoutX="530.0" layoutY="460.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

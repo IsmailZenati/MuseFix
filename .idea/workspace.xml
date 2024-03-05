@@ -4,16 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="11eme subscription commit">
+    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="12eme subscription commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/AfficherPackController.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/AfficherPackController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abonnement-pack/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/AfficherAbonnementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/controllers/AfficherAbonnementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/java/tests/MainFX.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AfficherPack.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AfficherPack.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AfficherAbonnement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/abonnement-pack/src/main/resources/AfficherAbonnement.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -25,6 +34,9 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/abonnement-pack/src/main/resources/AjouterPack.fxml" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
@@ -49,6 +61,9 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.39885056&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -64,6 +79,48 @@
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration name="abonnement-pack" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings">
+          <MavenRunnerSettings>
+            <option name="delegateBuildToMaven" value="false" />
+            <option name="environmentProperties">
+              <map />
+            </option>
+            <option name="jreName" value="#USE_PROJECT_JDK" />
+            <option name="mavenProperties">
+              <map />
+            </option>
+            <option name="passParentEnv" value="true" />
+            <option name="runMavenInBackground" value="true" />
+            <option name="skipTests" value="false" />
+            <option name="vmOptions" value="--module-path &quot;$PROJECT_DIR$/../../../../javafx/javafx-sdk-21.0.2/lib&quot; --add-modules=javafx.controls,javafx.swing " />
+          </MavenRunnerSettings>
+        </option>
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list />
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/abonnement-pack" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -82,7 +139,10 @@
       <workItem from="1709075504174" duration="29479000" />
       <workItem from="1709228979839" duration="1072000" />
       <workItem from="1709230079773" duration="7503000" />
-      <workItem from="1709393598044" duration="13968000" />
+      <workItem from="1709393598044" duration="14332000" />
+      <workItem from="1709492287122" duration="11657000" />
+      <workItem from="1709554137998" duration="5443000" />
+      <workItem from="1709564040614" duration="25250000" />
     </task>
     <task id="LOCAL-00001" summary="First subscription commit 1.00">
       <option name="closed" value="true" />
@@ -244,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709483875351</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="12eme subscription commit">
+      <option name="closed" value="true" />
+      <created>1709485317393</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1709485317393</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +331,7 @@
     <MESSAGE value="tenth commit" />
     <MESSAGE value="final commit" />
     <MESSAGE value="11eme subscription commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="11eme subscription commit" />
+    <MESSAGE value="12eme subscription commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="12eme subscription commit" />
   </component>
 </project>
