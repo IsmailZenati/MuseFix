@@ -23,9 +23,6 @@ public class AfficherCelebriteController {
     private TableView<celebrite> tv_celebrite;
 
     @FXML
-    private TableColumn<celebrite, Integer> col_idCelebrite;
-
-    @FXML
     private TableColumn<celebrite, String> col_nom;
 
     @FXML
@@ -44,7 +41,6 @@ public class AfficherCelebriteController {
             tv_celebrite.setItems(celebrites);
 
             // Initialize columns
-            col_idCelebrite.setCellValueFactory(new PropertyValueFactory<>("idCelebrite"));
             col_nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
             col_nationalite.setCellValueFactory(new PropertyValueFactory<>("nationalite"));
             col_profession.setCellValueFactory(new PropertyValueFactory<>("profession"));

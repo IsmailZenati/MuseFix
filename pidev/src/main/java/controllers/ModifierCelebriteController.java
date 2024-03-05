@@ -26,9 +26,6 @@ public class ModifierCelebriteController {
     private Button deleteCelebrite;
 
     @FXML
-    private TextField tf_idCelebrite;
-
-    @FXML
     private TextField tf_nom;
 
     @FXML
@@ -70,23 +67,26 @@ public class ModifierCelebriteController {
         if (modifierCelebrite != null) {
             modifierCelebrite.setOnAction(event -> {
                 try {
-                    // Get the ID of the celebrite to modify
-                    int idCelebrite = Integer.parseInt(tf_idCelebrite.getText());
+                    // Get the nom of the celebrite to modify
+                    String nom = tf_nom.getText();
 
                     // Get values from text fields for modification
-                    String nom = tf_nom.getText();
                     Date dateNais = parseDate(tf_dateNais.getText());
                     String nationalite = tf_nationalite.getText();
                     String profession = tf_profession.getText();
 
                     // Create a new celebrite object with updated values
-                    celebrite modifiedCelebrite = new celebrite(idCelebrite, nom, dateNais, nationalite, profession);
+                    celebrite modifiedCelebrite = new celebrite();
+                    modifiedCelebrite.setNom(nom);
+                    modifiedCelebrite.setDateNais(dateNais);
+                    modifiedCelebrite.setNationalite(nationalite);
+                    modifiedCelebrite.setProfession(profession);
 
                     // Call the service method to modify the celebrite
-                    servicecelebrite.modifier(modifiedCelebrite);
+                    servicecelebrite.modifier(nom ,modifiedCelebrite);
 
                     // Show success message
-                    System.out.println("Celebrite with ID " + idCelebrite + " modified successfully.");
+                    System.out.println("Celebrite with nom " + nom + " modified successfully.");
 
                 } catch (NumberFormatException e) {
                     // Handle invalid input
@@ -101,18 +101,18 @@ public class ModifierCelebriteController {
         if (deleteCelebrite != null) {
             deleteCelebrite.setOnAction(event -> {
                 try {
-                    // Get the ID of the celebrite to delete
-                    int idCelebrite = Integer.parseInt(tf_idCelebrite.getText());
+                    // Get the nom of the celebrite to delete
+                    String nom = tf_nom.getText();
 
-                    // Delete the celebrite based on ID
-                    servicecelebrite.supprimer(idCelebrite);
+                    // Delete the celebrite based on nom
+                    servicecelebrite.supprimer(nom);
 
                     // Show success message
-                    System.out.println("Celebrite with ID " + idCelebrite + " deleted successfully.");
+                    System.out.println("Celebrite with nom " + nom + " deleted successfully.");
 
                 } catch (NumberFormatException e) {
                     // Handle invalid input
-                    System.out.println("Invalid celebrite ID format.");
+                    System.out.println("Invalid celebrite nom format.");
                 } catch (SQLException ex) {
                     // Handle SQL exception
                     System.out.println("Error deleting celebrite: " + ex.getMessage());
@@ -120,6 +120,7 @@ public class ModifierCelebriteController {
             });
         }
     }
+
 
     // Method to parse date string to Date object
     private Date parseDate(String dateString) {

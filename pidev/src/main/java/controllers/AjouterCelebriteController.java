@@ -24,8 +24,6 @@ public class AjouterCelebriteController {
 
     Servicecelebrite servicecelebrite = new Servicecelebrite();
 
-    @FXML
-    private TextField tf_idCelebrite;
 
     @FXML
     private TextField tf_nom;
@@ -109,7 +107,7 @@ public class AjouterCelebriteController {
             }
 
             // Créer une instance de celebrite en utilisant les valeurs des champs de texte
-            celebrite nouveauCelebrite = new celebrite(Integer.parseInt(tf_idCelebrite.getText()), tf_nom.getText(), dateNais, tf_nationalite.getText(), tf_profession.getText());
+            celebrite nouveauCelebrite = new celebrite( tf_nom.getText(), dateNais, tf_nationalite.getText(), tf_profession.getText());
 
             // Ajouter le nouveau celebrite en utilisant le service approprié
             servicecelebrite.ajouter(nouveauCelebrite);
@@ -126,13 +124,6 @@ public class AjouterCelebriteController {
             alert.setTitle("Erreur");
             alert.setHeaderText(null);
             alert.setContentText("Une erreur s'est produite lors de l'ajout du celebrite : " + e.getMessage());
-            alert.showAndWait();
-        } catch (NumberFormatException e) {
-            // En cas d'erreur de conversion de chaîne en entier, afficher un message d'erreur
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Erreur");
-            alert.setHeaderText(null);
-            alert.setContentText("Veuillez saisir un numéro valide pour l'ID du celebrite !");
             alert.showAndWait();
         }
     }

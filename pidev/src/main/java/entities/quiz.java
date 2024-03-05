@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class quiz {
     private int idQuiz;
-    private int idCelebrite;
+    private String nom;
     private String titre;
     private String description;
     private String difficulte;
@@ -12,13 +12,13 @@ public class quiz {
 
     public quiz() {}
 
-    public quiz(int idQuiz, String titre, String description, String difficulte, Date dateCreation, int idCelebrite) {
-        this.idQuiz = idQuiz;
+    public quiz( String titre, String description, String difficulte, Date dateCreation, String nom) {
+
         this.titre = titre;
         this.description = description;
         this.difficulte = difficulte;
         this.dateCreation = dateCreation;
-        this.idCelebrite = idCelebrite;
+        this.nom = nom;
     }
 
     public int getIdQuiz() {
@@ -61,12 +61,12 @@ public class quiz {
         this.dateCreation = dateCreation;
     }
 
-    public int getIdCelebrite() {
-        return idCelebrite;
+    public String getNom() {
+        return nom;
     }
 
-    public void setIdCelebrite(int idCelebrite) {
-        this.idCelebrite = idCelebrite;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     @Override
@@ -77,7 +77,7 @@ public class quiz {
                 ", description='" + description + '\'' +
                 ", difficulte='" + difficulte + '\'' +
                 ", dateCreation=" + dateCreation +
-                ", idCelebrite=" + idCelebrite +
+                ", nom=" + nom +
                 '}';
     }
 }

@@ -12,7 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import services.Servicequiz;
-
+import javafx.event.EventHandler;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.paint.Color;
+import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.text.ParseException;
@@ -30,7 +34,7 @@ public class AjouterQuizController {
     private TextField tf_difficulte;
 
     @FXML
-    private TextField tf_idCelebrite;
+    private TextField tf_nom;
 
     @FXML
     private TextField tf_titre;
@@ -39,11 +43,37 @@ public class AjouterQuizController {
     private TextField tf_DateCreation;
 
     @FXML
-    private TextField tf_idQuiz;
-
-    @FXML
     private Button goToAjouterCelebriteButton;
 
+    @FXML
+    private Button playquizbtn;
+
+    @FXML
+    private void initialize() {
+
+        playquizbtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+
+                try {
+                    Stage thisstage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+                    thisstage.close();
+
+                    FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/quiz.fxml"));
+                    Scene scene = new Scene(fxmlLoader.load());
+                    Stage stage = new Stage();
+                    stage.setScene(scene);
+                    stage.initStyle(StageStyle.TRANSPARENT);
+                    scene.setFill(Color.TRANSPARENT);
+                    stage.show();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
+    }
     @FXML
     void goToAjouterCelebrite(ActionEvent event) {
         try {
@@ -63,14 +93,12 @@ public class AjouterQuizController {
     @FXML
     void AfficherQuiz(ActionEvent event) {
         try {
-            // Load the FXML file for AfficherQuiz.fxml
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/AfficherQuiz.fxml"));
-            Parent afficherRoot = loader.load();
+            Parent root = loader.load();
 
-            // Set the AfficherQuiz interface as the root of the scene
-            Scene afficherScene = new Scene(afficherRoot);
-            Stage stage = new Stage();
-            stage.setScene(afficherScene);
+            Stage stage = new Stage(); // Create a new stage for the new scene
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
             stage.setTitle("Afficher Quiz");
             stage.show();
         } catch (IOException e) {
@@ -103,12 +131,11 @@ public class AjouterQuizController {
             Date dateCreation = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").parse(dateString);
 
             quiz nouveauQuiz = new quiz(
-                    Integer.parseInt(tf_idQuiz.getText()),
                     tf_titre.getText(),
                     tf_description.getText(),
                     tf_difficulte.getText(),
                     dateCreation,
-                    Integer.parseInt(tf_idCelebrite.getText())
+                    tf_nom.getText()
             );
 
             servicequiz.ajouter(nouveauQuiz);

@@ -26,16 +26,13 @@ public class ModifierQuizController {
     private Button deleteQuiz;
 
     @FXML
-    private TextField tf_idQuiz;
-
-    @FXML
     private TextField tf_description;
 
     @FXML
     private TextField tf_difficulte;
 
     @FXML
-    private TextField tf_idCelebrite;
+    private TextField tf_nom;
 
     @FXML
     private TextField tf_titre;
@@ -73,24 +70,28 @@ public class ModifierQuizController {
         if (modifierQuiz != null) {
             modifierQuiz.setOnAction(event -> {
                 try {
-                    // Get the ID of the quiz to modify
-                    int idQuiz = Integer.parseInt(tf_idQuiz.getText());
+                    // Get the titre of the quiz to modify
+                    String titre = tf_titre.getText();
 
                     // Get values from text fields for modification
-                    String titre = tf_titre.getText();
+                    String nom = tf_nom.getText();
                     String description = tf_description.getText();
                     String difficulte = tf_difficulte.getText();
-                    int idCelebrite = Integer.parseInt(tf_idCelebrite.getText());
                     Date dateCreation = parseDate(tf_DateCreation.getText());
 
                     // Create a new quiz object with updated values
-                    quiz modifiedQuiz = new quiz(idQuiz, titre, description, difficulte, dateCreation, idCelebrite);
+                    quiz modifiedQuiz = new quiz();
+                    modifiedQuiz.setTitre(titre);
+                    modifiedQuiz.setDescription(description);
+                    modifiedQuiz.setDifficulte(difficulte);
+                    modifiedQuiz.setDateCreation(dateCreation);
+                    modifiedQuiz.setNom(nom);
 
                     // Call the service method to modify the quiz
-                    servicequiz.modifier(modifiedQuiz);
+                    servicequiz.modifier(titre, modifiedQuiz);
 
                     // Show success message
-                    System.out.println("Quiz with ID " + idQuiz + " modified successfully.");
+                    System.out.println("Quiz with titre " + titre + " modified successfully.");
 
                 } catch (NumberFormatException e) {
                     // Handle invalid input
@@ -105,18 +106,18 @@ public class ModifierQuizController {
         if (deleteQuiz != null) {
             deleteQuiz.setOnAction(event -> {
                 try {
-                    // Get the ID of the quiz to delete
-                    int idQuiz = Integer.parseInt(tf_idQuiz.getText());
+                    // Get the nom of the quiz to delete
+                    String titre = tf_titre.getText();
 
-                    // Delete the quiz based on ID
-                    servicequiz.supprimer(idQuiz);
+                    // Delete the quiz based on nom
+                    servicequiz.supprimer(titre);
 
                     // Show success message
-                    System.out.println("Quiz with ID " + idQuiz + " deleted successfully.");
+                    System.out.println("Quiz with titre " + titre + " deleted successfully.");
 
                 } catch (NumberFormatException e) {
                     // Handle invalid input
-                    System.out.println("Invalid quiz ID format.");
+                    System.out.println("Invalid quiz titre.");
                 } catch (SQLException ex) {
                     // Handle SQL exception
                     System.out.println("Error deleting quiz: " + ex.getMessage());
@@ -124,6 +125,7 @@ public class ModifierQuizController {
             });
         }
     }
+
 
     // Method to parse date string to Date object
     private Date parseDate(String dateString) {

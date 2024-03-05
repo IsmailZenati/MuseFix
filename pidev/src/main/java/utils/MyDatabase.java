@@ -19,7 +19,7 @@ public class MyDatabase {
             System.out.println(e.getMessage());
         }
     }
-    public  static MyDatabase getInstance(){
+     public  static MyDatabase getInstance(){
         if(instance==null){
             instance= new MyDatabase();
         }

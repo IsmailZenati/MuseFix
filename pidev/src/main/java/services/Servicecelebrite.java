@@ -31,28 +31,33 @@ public class Servicecelebrite implements IService<celebrite> {
     }
 
     @Override
-    public void modifier(celebrite celebrite) throws SQLException {
-        String req = "update celebrite set nom=?, dateNais=?, nationalite=?, profession=?  where idCelebrite=?";
-        PreparedStatement ps = connection.prepareStatement(req);
-
-        ps.setString(1, celebrite.getNom());
-        ps.setDate(2, new java.sql.Date(celebrite.getDateNais().getTime()));
-        ps.setString(3, celebrite.getNationalite());
-        ps.setString(4, celebrite.getProfession());
-        ps.setInt(5, celebrite.getIdCelebrite());
-
-        ps.executeUpdate();
-        System.out.println("celebrite modifie");
+    public void modifier(String nom, celebrite celebrite) throws SQLException {
+        String req = "UPDATE celebrite SET dateNais=?, nationalite=?, profession=? WHERE nom=?";
+        try (PreparedStatement ps = connection.prepareStatement(req)) {
+            ps.setTimestamp(1, new Timestamp(celebrite.getDateNais().getTime()));
+            ps.setString(2, celebrite.getNationalite());
+            ps.setString(3, celebrite.getProfession());
+            ps.setString(4, nom); // use the original nom to identify the celebrite to modify
+            ps.executeUpdate();
+            System.out.println("Celebrite modifiée");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
+
 
     @Override
-    public void supprimer(int idCelebrite) throws SQLException {
-        String req = "DELETE FROM celebrite WHERE idCelebrite=?";
-        PreparedStatement ps = connection.prepareStatement(req);
-        ps.setInt(1, idCelebrite);
-        ps.executeUpdate();
-        System.out.println("celebrite supprimée");
+    public void supprimer(String nom) throws SQLException {
+        String req = "DELETE FROM celebrite WHERE nom=?";
+        try (PreparedStatement ps = connection.prepareStatement(req)) {
+            ps.setString(1, nom);
+            ps.executeUpdate();
+            System.out.println("Celebrite supprimée");
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
+
 
     @Override
     public List<celebrite> afficher() throws SQLException {

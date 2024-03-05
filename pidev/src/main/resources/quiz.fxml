@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #00dcff;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.QuizController">
+
+    <children>
+        <!-- Timer Label -->
+        <Label fx:id="timerLabel" layoutX="67.0" layoutY="26.0" style="-fx-font-family: 'Arial'; -fx-font-size: 36;" text="00:00:00" textFill="#1a1b1b">
+         <font>
+            <Font name="Audiowide Regular" size="20.0" />
+         </font></Label>
+
+
+        <!-- Question Label -->
+        <Label fx:id="question" layoutX="43.0" layoutY="68.0" prefHeight="89.0" prefWidth="594.0" text="1. Who is known as the King of Pop?" wrapText="true">
+            <font>
+                <Font size="22.0" />
+            </font>
+        </Label>
+
+        <!-- Option Buttons -->
+        <Button fx:id="opt1" layoutX="43.0" layoutY="175.0" mnemonicParsing="false" onAction="#opt1clicked" prefHeight="105.0" prefWidth="295.0" style="-fx-background-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+            <font>
+                <Font name="Old English Text MT" size="20.0" />
+            </font>
+        </Button>
+        <Button id="opt3" fx:id="opt3" layoutX="43.0" layoutY="323.0" mnemonicParsing="false" onAction="#opt3clicked" prefHeight="105.0" prefWidth="295.0" style="-fx-background-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+            <font>
+                <Font name="Old English Text MT" size="20.0" />
+            </font>
+        </Button>
+        <Button id="opt4" fx:id="opt4" layoutX="359.0" layoutY="323.0" mnemonicParsing="false" onAction="#opt4clicked" prefHeight="105.0" prefWidth="295.0" style="-fx-background-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+            <font>
+                <Font name="Old English Text MT" size="20.0" />
+            </font>
+        </Button>
+        <Button id="opt2" fx:id="opt2" layoutX="359.0" layoutY="175.0" mnemonicParsing="false" onAction="#opt2clicked" prefHeight="105.0" prefWidth="295.0" style="-fx-background-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Button" textFill="WHITE">
+            <font>
+                <Font name="Old English Text MT" size="20.0" />
+            </font>
+        </Button>
+    </children>
+</AnchorPane>

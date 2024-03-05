@@ -19,9 +19,6 @@ public class AfficherQuizController {
     Servicequiz servicequiz = new Servicequiz();
 
     @FXML
-    private TableColumn<quiz, Integer> col_idQuiz;
-
-    @FXML
     private TableColumn<quiz, String> col_titre;
 
     @FXML
@@ -34,7 +31,7 @@ public class AfficherQuizController {
     private TableColumn<quiz, String> col_dateCreation;
 
     @FXML
-    private TableColumn<quiz, Integer> col_idCelebrite;
+    private TableColumn<quiz, Integer> col_nom;
 
     @FXML
     private TableView<quiz> tv_quiz;
@@ -45,11 +42,10 @@ public class AfficherQuizController {
             ObservableList<quiz> quizzes = FXCollections.observableList(servicequiz.afficher());
             tv_quiz.setItems(quizzes);
 
-            col_idQuiz.setCellValueFactory(new PropertyValueFactory<>("idQuiz"));
             col_titre.setCellValueFactory(new PropertyValueFactory<>("titre"));
             col_description.setCellValueFactory(new PropertyValueFactory<>("description"));
             col_difficulte.setCellValueFactory(new PropertyValueFactory<>("difficulte"));
-            col_idCelebrite.setCellValueFactory(new PropertyValueFactory<>("idCelebrite"));
+            col_nom.setCellValueFactory(new PropertyValueFactory<>("nom"));
 
             // Convert Date to String for display
             col_dateCreation.setCellValueFactory(cellData -> {

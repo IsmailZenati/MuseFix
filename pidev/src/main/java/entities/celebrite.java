@@ -12,13 +12,14 @@ public class celebrite {
     public celebrite() {
     }
 
-    public celebrite(int idCelebrite, String nom, Date dateNais, String nationalite, String profession) {
-        this.idCelebrite = idCelebrite;
+    public celebrite( String nom, Date dateNais, String nationalite, String profession) {
         this.nom = nom;
         this.dateNais = dateNais;
         this.nationalite = nationalite;
         this.profession = profession;
     }
+
+
 
     public int getIdCelebrite() {
         return idCelebrite;

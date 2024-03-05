@@ -21,13 +21,13 @@ public class Main {
             SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date DateCreation = dateFormat.parse(dateString);
 
-            quiz q1 = new quiz(1,"titreABC","descriptionABC","easy", DateCreation,2);
+           // quiz q1 = new quiz("titreABC","descriptionABC","easy", DateCreation,"teta");
 
-            // celebrite c1 = new celebrite(13,"Picasso",DateCreation,"Africa","Artiste");
+             celebrite c1 = new celebrite("Picasso",DateCreation,"Africa","Artiste");
 
           //  servicecelebrite.ajouter(c1);
 
-            servicequiz.ajouter(q1);
+          //  servicequiz.ajouter(q1);
            // servicequiz.afficher();
            // servicequiz.supprimer(q1);
 
@@ -39,8 +39,6 @@ public class Main {
         catch (ParseException e){
             System.out.println("Failed to parse date:"+ dateString);
             e.printStackTrace();
-        } catch (SQLException e){
-            System.out.println(e.getMessage());
         }
 
     }

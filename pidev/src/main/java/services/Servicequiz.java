@@ -16,56 +16,56 @@ public class Servicequiz implements IService<quiz> {
 
     @Override
     public void ajouter(quiz quiz) throws SQLException {
-        // Check if the idCelebrite exists before inserting the quiz
-        if (!checkCelebriteExists(quiz.getIdCelebrite())) {
-            System.out.println("Error: idCelebrite does not exist");
+        // Check if the nom exists before inserting the quiz
+        if (!checkNomExists(quiz.getNom())) {
+            System.out.println("Error: nom does not exist in the Celebrite table");
             return;
         }
 
-        String req = "INSERT INTO quiz (titre, description, difficulte, DateCreation, idCelebrite) VALUES (?, ?, ?, ?, ?)";
+        String req = "INSERT INTO quiz (titre, description, difficulte, DateCreation, nom) VALUES (?, ?, ?, ?, ?)";
         PreparedStatement ps = connection.prepareStatement(req);
 
         ps.setString(1, quiz.getTitre());
         ps.setString(2, quiz.getDescription());
         ps.setString(3, quiz.getDifficulte());
         ps.setDate(4, new java.sql.Date(quiz.getDateCreation().getTime()));
-        ps.setInt(5, quiz.getIdCelebrite());
+        ps.setString(5, quiz.getNom());
 
         ps.executeUpdate();
 
         System.out.println("quiz ajouté");
     }
 
-    // Method to check if the given idCelebrite exists in the Celebrite table
-    private boolean checkCelebriteExists(int idCelebrite) throws SQLException {
-        String query = "SELECT * FROM Celebrite WHERE idCelebrite = ?";
+    // Method to check if the given nom exists in the Celebrite table
+    private boolean checkNomExists(String nom) throws SQLException {
+        String query = "SELECT * FROM Celebrite WHERE nom = ?";
         PreparedStatement ps = connection.prepareStatement(query);
-        ps.setInt(1, idCelebrite);
+        ps.setString(1, nom);
         ResultSet rs = ps.executeQuery();
-        return rs.next(); // Returns true if a row is found, indicating that the idCelebrite exists
+        return rs.next(); // Returns true if a row is found, indicating that the nom exists
     }
 
     @Override
-    public void modifier(quiz quiz) throws SQLException {
-        String req = "UPDATE quiz SET titre=?, description=?, difficulte=?, DateCreation=?, idCelebrite=? WHERE idQuiz=?";
+    public void modifier(String titre, quiz quiz) throws SQLException {
+        String req = "UPDATE quiz SET nom=?, description=?, difficulte=?, DateCreation=? WHERE titre=?";
         PreparedStatement ps = connection.prepareStatement(req);
 
-        ps.setString(1, quiz.getTitre());
+        ps.setString(1, quiz.getNom());
         ps.setString(2, quiz.getDescription());
         ps.setString(3, quiz.getDifficulte());
         ps.setDate(4, new java.sql.Date(quiz.getDateCreation().getTime()));
-        ps.setInt(5, quiz.getIdCelebrite());
-        ps.setInt(6, quiz.getIdQuiz());
+        ps.setString(5, titre);
 
         ps.executeUpdate();
         System.out.println("quiz modifie");
     }
 
+
     @Override
-    public void supprimer(int idQuiz) throws SQLException {
-        String req = "DELETE FROM quiz WHERE idQuiz=?";
+    public void supprimer(String titre) throws SQLException {
+        String req = "DELETE FROM quiz WHERE titre=?";
         PreparedStatement ps = connection.prepareStatement(req);
-        ps.setInt(1, idQuiz);
+        ps.setString(1, titre);
         ps.executeUpdate();
         System.out.println("Quiz supprimée");
     }
@@ -85,7 +85,7 @@ public class Servicequiz implements IService<quiz> {
                 q.setDescription(rs.getString("description"));
                 q.setDifficulte(rs.getString("difficulte"));
                 q.setDateCreation(rs.getDate("DateCreation"));
-                q.setIdCelebrite(rs.getInt("idCelebrite"));
+                q.setNom(rs.getString("nom"));
 
                 quizzes.add(q);
             }
