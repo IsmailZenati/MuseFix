@@ -22,6 +22,7 @@
         </ImageView>
         <TableView fx:id="tv_commande" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
             <columns>
+                <TableColumn fx:id="col_panierID" editable="false" prefWidth="59.99999922513962" sortable="false" text="userID" visible="false" />
                 <TableColumn fx:id="col_userID" editable="false" prefWidth="59.99999922513962" sortable="false" text="userID" visible="false" />
                 <TableColumn fx:id="col_orderDate" prefWidth="124.00000381469727" text="Date de commande" />
                 <TableColumn fx:id="col_status" prefWidth="73.59996032714844" text="Status" />

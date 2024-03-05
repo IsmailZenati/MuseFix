@@ -43,6 +43,8 @@ public class ModifierCommandeController {
     @FXML
     private TextField tf_userID;
 
+    @FXML
+    private TextField tf_idPanier;
     private ServiceCommande serviceCommande;
 
     public ModifierCommandeController() {
@@ -57,7 +59,7 @@ public class ModifierCommandeController {
                 try {
                     // Get the ID of the Commande to modify
                     int idCommande = Integer.parseInt(tf_idCommande.getText());
-
+                    int idPanier = Integer.parseInt(tf_idPanier.getText());
                     // Get values from text fields for modification
                     int userId = Integer.parseInt(tf_userID.getText());
                     String adresseLivraison = tf_adresseLivraison.getText();
@@ -68,7 +70,7 @@ public class ModifierCommandeController {
                     Date DateCommande = parseDate(tf_orderDate.getText());
 
                     // Create a new quiz object with updated values
-                    Commande modifiedCommande = new Commande(idCommande, DateCommande, status, modePaiement, adresseLivraison,fraisLivraison,total);
+                    Commande modifiedCommande = new Commande(idCommande,idPanier, DateCommande, status, modePaiement, adresseLivraison,fraisLivraison,total);
 
                     // Call the service method to modify the command
                     serviceCommande.modifier(modifiedCommande);

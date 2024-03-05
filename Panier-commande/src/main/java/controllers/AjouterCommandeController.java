@@ -41,10 +41,13 @@ public class AjouterCommandeController {
     private TextField tf_userid;
 
     @FXML
+    private TextField tf_idPanier;
+
+    @FXML
     void AjouterCommande(ActionEvent event) {
         Date dp_orderDate = java.sql.Date.valueOf(datePicker.getValue());
         try {
-            serviceCommande.ajouter(new Commande(Integer.parseInt(tf_userid.getText()), dp_orderDate,tf_status.getText(),tf_modePaiement.getText(),tf_adresseLivraison.getText(),Float.parseFloat(tf_fraisLivraison.getText()),Float.parseFloat(tf_total.getText())));
+            serviceCommande.ajouter(new Commande(Integer.parseInt(tf_idPanier.getText()),Integer.parseInt(tf_userid.getText()), dp_orderDate,tf_status.getText(),tf_modePaiement.getText(),tf_adresseLivraison.getText(),Float.parseFloat(tf_fraisLivraison.getText()),Float.parseFloat(tf_total.getText())));
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("success");
             alert.setContentText("Commande ajouté");

@@ -4,6 +4,7 @@ import java.util.Date;
 
 public class Commande {
     private int idCommande;
+    private int idPanier;
     private int userID;
     private Date orderDate;
     private String status;
@@ -13,7 +14,19 @@ public class Commande {
     private float total;
 
     // Constructor
-    public Commande(int userID, Date orderDate, String status, String modePaiement, String adresseLivraison, float fraisLivraison, float total) {
+    public Commande(int idPanier,int userID,Date orderDate, String status, String modePaiement, String adresseLivraison, float fraisLivraison, float total) {
+        this.idPanier = idPanier;
+        this.userID = userID;
+        this.orderDate = orderDate;
+        this.status = status;
+        this.modePaiement = modePaiement;
+        this.adresseLivraison = adresseLivraison;
+        this.fraisLivraison = fraisLivraison;
+        this.total = total;
+    }
+    public Commande(int idCommande,int idPanier,int userID,Date orderDate, String status, String modePaiement, String adresseLivraison, float fraisLivraison, float total) {
+        this.idCommande = idCommande;
+        this.idPanier = idPanier;
         this.userID = userID;
         this.orderDate = orderDate;
         this.status = status;
@@ -30,6 +43,14 @@ public class Commande {
 
     public void setIdCommande(int idCommande) {
         this.idCommande = idCommande;
+    }
+
+    public int getIdPanier() {
+        return idPanier;
+    }
+
+    public void setIdPanier(int idPanier) {
+        this.idPanier = idPanier;
     }
 
     public int getUserID() {
@@ -92,6 +113,7 @@ public class Commande {
     public String toString() {
         return "Commande{" +
                 "idCommande=" + idCommande +
+                ", idPanier=" + idPanier +
                 ", userID=" + userID +
                 ", dateCommande='" + orderDate + '\'' +
                 ", statut='" + status + '\'' +

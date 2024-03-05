@@ -13,8 +13,8 @@ public class Main {
         ServicePanier servicePanier = new ServicePanier();
         Panier p1 = new Panier(1,2,1,20);
 
-        Commande c1 = new Commande(1, new Date(), "livree", "liquide", "123 Street, City", 10.5f, 100.6f);
-        Commande c2 = new Commande(2, new Date(), "livree", "paypal", "456 Avenue, Town", 8.75f,150.6f);
+        Commande c1 = new Commande(8,1, new Date(), "livree", "liquide", "123 Street, City", 10.5f, 100.6f);
+        Commande c2 = new Commande(8,2, new Date(), "livree", "paypal", "456 Avenue, Town", 8.75f,150.6f);
         c1.setIdCommande(10); // Supposons que l'ID de la commande à modifier est 10
         c1.setStatus("annule");
         c1.setModePaiement("paypal");

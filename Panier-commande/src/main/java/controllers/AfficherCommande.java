@@ -19,6 +19,9 @@ public class AfficherCommande {
     ServiceCommande serviceCommande = new ServiceCommande();
 
     @FXML
+    private TableColumn<Commande, Integer> col_panierID;
+
+    @FXML
     private TableColumn<Commande, Integer> col_userID;
 
     @FXML
@@ -47,6 +50,7 @@ public class AfficherCommande {
         try {
             ObservableList<Commande> commandes = FXCollections.observableList(serviceCommande.afficher());
             tv_commande.setItems(commandes);
+            col_panierID.setCellValueFactory(new PropertyValueFactory<>("idPanier"));
 
             col_userID.setCellValueFactory(new PropertyValueFactory<>("userID"));
 

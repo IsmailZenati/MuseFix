@@ -57,6 +57,7 @@ public class ServiceCommande implements IService<Commande> {
              ResultSet resultSet = statement.executeQuery(req)) {
             while (resultSet.next()) {
                 Commande commande = new Commande(
+                        resultSet.getInt("idPanier"),
                         resultSet.getInt("userID"),
                         resultSet.getDate("orderDate"),
                         resultSet.getString("status"),
@@ -75,12 +76,19 @@ public class ServiceCommande implements IService<Commande> {
 
     // Update
     public void modifier(Commande commande) throws SQLException {
-        String req = "UPDATE commande SET status = ?, modePaiement = ?,adresseLivraison = ? WHERE idCommande = ?";
+        String req = "UPDATE commande SET status = ? WHERE idCommande = ?";
         try (PreparedStatement statement = connection.prepareStatement(req)) {
             statement.setString(1, commande.getStatus());
-            statement.setString(2, commande.getModePaiement());
-            statement.setString(3, commande.getAdresseLivraison());
-            statement.setInt(4, commande.getIdCommande());
+            statement.setInt(2, commande.getIdCommande());
+            statement.executeUpdate();
+        }
+    }
+    public void modifieruser(Commande commande) throws SQLException {
+        String req = "UPDATE commande SET modePaiement = ?,adresseLivraison = ? WHERE idCommande = ?";
+        try (PreparedStatement statement = connection.prepareStatement(req)) {
+            statement.setString(1, commande.getModePaiement());
+            statement.setString(2, commande.getAdresseLivraison());
+            statement.setInt(3, commande.getIdCommande());
             statement.executeUpdate();
         }
     }
