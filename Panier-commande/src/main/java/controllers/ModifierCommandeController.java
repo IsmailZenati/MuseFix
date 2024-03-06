@@ -70,13 +70,13 @@ public class ModifierCommandeController {
                     Date DateCommande = parseDate(tf_orderDate.getText());
 
                     // Create a new quiz object with updated values
-                    Commande modifiedCommande = new Commande(idCommande,idPanier, DateCommande, status, modePaiement, adresseLivraison,fraisLivraison,total);
+                    Commande modifiedCommande = new Commande(idCommande,idPanier,userId, DateCommande, status, modePaiement, adresseLivraison,fraisLivraison,total);
 
                     // Call the service method to modify the command
                     serviceCommande.modifier(modifiedCommande);
 
                     // Show success message
-                    System.out.println("Commande with ID " + userId + " modified successfully.");
+                    System.out.println("Commande with ID " + idCommande + " modified successfully.");
 
                 } catch (NumberFormatException e) {
                     // Handle invalid input

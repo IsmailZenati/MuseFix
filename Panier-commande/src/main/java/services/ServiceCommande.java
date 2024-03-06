@@ -24,16 +24,17 @@ public class ServiceCommande implements IService<Commande> {
             System.out.println("Error: userID does not exist");
             return;
         }
-        String req = "INSERT INTO commande (userID, orderDate, status, modePaiement, adresseLivraison, fraisLivraison, total) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String req = "INSERT INTO commande (idPanier,userID, orderDate, status, modePaiement, adresseLivraison, fraisLivraison, total) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(req)) {
+            statement.setInt(1, commande.getIdPanier());
             // Utilisation de l'ID utilisateur fourni sans vérifier son existence
-            statement.setInt(1, commande.getUserID());
-            statement.setTimestamp(2, new java.sql.Timestamp(commande.getOrderDate().getTime()));
-            statement.setString(3, commande.getStatus());
-            statement.setString(4, commande.getModePaiement());
-            statement.setString(5, commande.getAdresseLivraison());
-            statement.setFloat(6, commande.getFraisLivraison());
-            statement.setFloat(7, commande.getTotal());
+            statement.setInt(2, commande.getUserID());
+            statement.setTimestamp(3, new java.sql.Timestamp(commande.getOrderDate().getTime()));
+            statement.setString(4, commande.getStatus());
+            statement.setString(5, commande.getModePaiement());
+            statement.setString(6, commande.getAdresseLivraison());
+            statement.setFloat(7, commande.getFraisLivraison());
+            statement.setFloat(8, commande.getTotal());
             statement.executeUpdate();
         }
     }
