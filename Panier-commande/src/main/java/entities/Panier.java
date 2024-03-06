@@ -16,6 +16,14 @@ public class Panier {
         this.prixUnite = prixUnite;
         this.sousTotal = qte * prixUnite;
     }
+    public Panier(int idPanier,int userID, int idProduit, int qte, float prixUnite) {
+        this.idPanier = idPanier;
+        this.userID = userID;
+        this.idProduit = idProduit;
+        this.qte = qte;
+        this.prixUnite = prixUnite;
+        this.sousTotal = qte * prixUnite;
+    }
 
     // Getters et Setters
     public int getIdPanier() {

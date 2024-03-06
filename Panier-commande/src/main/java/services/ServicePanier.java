@@ -52,11 +52,11 @@ public class ServicePanier {
 
     // Update
     public void modifier(Panier panier) throws SQLException {
-        String req = "UPDATE panier SET qte = ?, prixUnite = ? WHERE idProduit = ?";
+        String req = "UPDATE panier SET qte = ?, prixUnite = ? WHERE idPanier = ?";
         try (PreparedStatement statement = connection.prepareStatement(req)) {
             statement.setInt(1, panier.getQte());
             statement.setFloat(2, panier.getPrixUnite());
-            statement.setInt(3, panier.getIdProduit());
+            statement.setInt(3, panier.getIdPanier());
             statement.executeUpdate();
         }
     }

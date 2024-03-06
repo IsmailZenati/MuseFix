@@ -30,6 +30,9 @@ public class ModifierPanierController {
     @FXML
     private TextField tf_idProduit;
 
+    @FXML
+    private TextField tf_userID;
+
     private ServicePanier servicePanier;
 
     public ModifierPanierController() {
@@ -44,20 +47,20 @@ public class ModifierPanierController {
                 try {
                     // Get the ID of the panier to modify
                     int idPanier = Integer.parseInt(tf_idPanier.getText());
-
+                    int userID = Integer.parseInt(tf_userID.getText());
                     // Get values from text fields for modification
                     int qte = Integer.parseInt(tf_qte.getText());
                     float prixUnite = Float.parseFloat(tf_prixUnite.getText());
                     int idProduit = Integer.parseInt(tf_idProduit.getText());
 
                     // Create a new panier object with updated values
-                    Panier modifiedPanier = new Panier(idPanier, idProduit, qte, prixUnite);
+                    Panier modifiedPanier = new Panier(idPanier,userID, idProduit, qte, prixUnite);
 
                     // Call the service method to modify the panier
                     servicePanier.modifier(modifiedPanier);
 
                     // Show success message
-                    System.out.println("Produit avec ID " + idProduit + " modifié avec succès.");
+                    System.out.println("Panier avec ID " + idPanier + " modifié avec succès.");
 
                 } catch (NumberFormatException e) {
                     // Handle invalid input
