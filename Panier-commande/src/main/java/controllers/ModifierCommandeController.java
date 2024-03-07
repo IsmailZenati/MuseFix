@@ -52,7 +52,7 @@ public class ModifierCommandeController {
 
     public ModifierCommandeController() {
         // Initialize the service class
-         serviceCommande = new ServiceCommande();
+        serviceCommande = new ServiceCommande();
     }
 
     @FXML
@@ -72,7 +72,7 @@ public class ModifierCommandeController {
                     float total = Float.parseFloat(tf_total.getText());
                     Date DateCommande = parseDate(tf_orderDate.getText());
 
-                    // Create a new quiz object with updated values
+                    // Create a new Commande object with updated values
                     Commande modifiedCommande = new Commande(idCommande,idPanier,userId, DateCommande, status, modePaiement, adresseLivraison,fraisLivraison,total);
 
                     // Call the service method to modify the command
@@ -94,10 +94,10 @@ public class ModifierCommandeController {
         if (supprimerCommande != null) {
             supprimerCommande.setOnAction(event -> {
                 try {
-                    // Get the ID of the quiz to delete
+                    // Get the ID of the Commande to delete
                     int idCommande = Integer.parseInt(tf_idCommande.getText());
 
-                    // Delete the quiz based on ID
+                    // Delete the Commande based on ID
                     serviceCommande.supprimer(idCommande);
 
                     // Show success message
@@ -126,6 +126,8 @@ public class ModifierCommandeController {
         }
 
     }
+
+    // Cette méthode est appelée pour initialiser les données de commande
     public void initData(Commande commande) {
         this.commande = commande;
         // Remplir les champs de saisie avec les détails de la commande

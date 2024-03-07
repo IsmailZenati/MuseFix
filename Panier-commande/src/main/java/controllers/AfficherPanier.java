@@ -1,17 +1,22 @@
 package controllers;
 
+import entities.Commande;
+import entities.Panier;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import org.apache.commons.collections4.Predicate;
-import org.apache.commons.collections4.CollectionUtils;
-import entities.Panier;
 import services.ServicePanier;
 
+import java.io.IOException;
 import java.sql.SQLException;
 
 public class AfficherPanier {
@@ -61,6 +66,65 @@ public class AfficherPanier {
         col_qte.setCellValueFactory(new PropertyValueFactory<>("qte"));
         col_prixUnite.setCellValueFactory(new PropertyValueFactory<>("prixUnite"));
         col_sousTotal.setCellValueFactory(new PropertyValueFactory<>("sousTotal"));
+
+        // Ajouter les colonnes Modifier et Supprimer
+        TableColumn<Panier, Void> col_modifier = new TableColumn<>("Modifier");
+        col_modifier.setCellFactory(param -> new TableCell<Panier, Void>() {
+            private final Button modifierButton = new Button("Modifier");
+
+            {
+                modifierButton.setOnAction(event -> {
+                    Panier panierSelectionne = getTableView().getItems().get(getIndex());
+                    if (panierSelectionne != null) {
+                        openModifierPanierDialog(panierSelectionne);
+                    }
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(modifierButton);
+                }
+            }
+        });
+
+        TableColumn<Panier, Void> col_supprimer = new TableColumn<>("Supprimer");
+        col_supprimer.setCellFactory(param -> new TableCell<Panier, Void>() {
+            private final Button supprimerButton = new Button("Supprimer");
+
+            {
+                supprimerButton.setOnAction(event -> {
+                    Panier panierSelectionne = getTableView().getItems().get(getIndex());
+                    if (panierSelectionne != null) {
+                        try {
+                            servicePanier.supprimer(panierSelectionne.getIdPanier()); // Adapter la méthode supprimer selon votre implémentation
+                            tv_panier.getItems().remove(panierSelectionne);
+                            System.out.println("Panier with ID " + panierSelectionne.getIdPanier() + " deleted successfully.");
+                        } catch (SQLException e) {
+                            System.out.println("Error deleting Panier: " + e.getMessage());
+                        }
+                    } else {
+                        System.out.println("Invalid Panier ID format.");
+                    }
+                });
+            }
+
+            @Override
+            protected void updateItem(Void item, boolean empty) {
+                super.updateItem(item, empty);
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(supprimerButton);
+                }
+            }
+        });
+
+        tv_panier.getColumns().addAll(col_modifier, col_supprimer);
 
         // Charger et afficher les données initiales
         try {
@@ -114,5 +178,18 @@ public class AfficherPanier {
     void filtrerDonnees() {
         updateFilterPredicate();
     }
-
+    public void openModifierPanierDialog(Panier panier) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifierPanier.fxml"));
+        Parent root;
+        try {
+            root = loader.load();
+            ModifierPanierController controller = loader.getController();
+            controller.initData(panier);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

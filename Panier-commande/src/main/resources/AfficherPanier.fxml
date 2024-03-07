@@ -31,12 +31,13 @@
                 <TableColumn fx:id="col_qte" prefWidth="117.59996032714844" text="Quantité" />
                 <TableColumn fx:id="col_prixUnite" prefWidth="128.0" text="PrixUnité" />
                 <TableColumn fx:id="col_sousTotal" prefWidth="116.0" text="sousTotal" />
+                <TableColumn fx:id="col_modifier" prefWidth="80" text="Modifier" />
+                <TableColumn fx:id="col_supprimer" prefWidth="80" text="Supprimer" />
             </columns>
         </TableView>
 
         <!-- Ajout des TextField -->
         <TextField fx:id="tf_prixUniteFilter" layoutX="120.0" layoutY="63.0" promptText="Prix Unité Filter" />
         <TextField fx:id="tf_qteFilter" layoutX="283.0" layoutY="63.0" promptText="Quantité Filter" />
-      <Button fx:id="btn_filtrer" layoutX="459.0" layoutY="63.0" mnemonicParsing="false" onAction="#filtrerDonnees" text="Filtrer" />
     </children>
 </AnchorPane>

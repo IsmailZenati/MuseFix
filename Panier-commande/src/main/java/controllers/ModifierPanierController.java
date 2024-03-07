@@ -8,8 +8,6 @@ import services.ServicePanier;
 import entities.Panier;
 import java.sql.SQLException;
 
-
-
 public class ModifierPanierController {
 
     @FXML
@@ -35,6 +33,9 @@ public class ModifierPanierController {
 
     private ServicePanier servicePanier;
 
+    // Déclaration de la variable panier
+    private Panier panier;
+
     public ModifierPanierController() {
         // Initialize the service class
         servicePanier = new ServicePanier();
@@ -54,7 +55,7 @@ public class ModifierPanierController {
                     int idProduit = Integer.parseInt(tf_idProduit.getText());
 
                     // Create a new panier object with updated values
-                    Panier modifiedPanier = new Panier(idPanier,userID, idProduit, qte, prixUnite);
+                    Panier modifiedPanier = new Panier(idPanier, userID, idProduit, qte, prixUnite);
 
                     // Call the service method to modify the panier
                     servicePanier.modifier(modifiedPanier);
@@ -94,6 +95,16 @@ public class ModifierPanierController {
             });
         }
     }
+
+    // Méthode pour initialiser les champs avec les données du panier
+    public void initData(Panier panier) {
+        this.panier = panier;
+        // Remplir les champs de saisie avec les détails du panier
+        tf_idPanier.setText(String.valueOf(panier.getIdPanier()));
+        tf_userID.setText(String.valueOf(panier.getUserID()));
+        tf_idProduit.setText(String.valueOf(panier.getIdProduit()));
+        tf_qte.setText(String.valueOf(panier.getQte()));
+        tf_prixUnite.setText(String.valueOf(panier.getPrixUnite()));
+    }
+
 }
-
-
