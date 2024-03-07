@@ -7,6 +7,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
+<?import javafx.scene.control.Button?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6fffee" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherCommande">
     <children>
         <Text layoutX="163.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px;-fx-font-weight: bold" text="Voici le récapitulatif de vos commandes" />
@@ -30,6 +31,9 @@
                 <TableColumn fx:id="col_adresseLivraison" prefWidth="104.79998779296875" text="AdresseLivraison" />
                 <TableColumn fx:id="col_fraisLivraison" minWidth="0.0" prefWidth="87.20001220703125" text="FraisLivraison" />
                 <TableColumn fx:id="col_total" prefWidth="56.800048828125" text="Total" />
+                <TableColumn fx:id="col_modifier" prefWidth="80" text="Modifier" />
+                <TableColumn fx:id="col_supprimer" prefWidth="80" text="Supprimer" />
+
             </columns>
         </TableView>
     </children>

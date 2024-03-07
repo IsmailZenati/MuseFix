@@ -1,5 +1,6 @@
 package controllers;
 
+
 import entities.Commande;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -8,17 +9,16 @@ import javafx.scene.Parent;
 import javafx.scene.control.Alert;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
-
 import services.ServiceCommande;
-
-
 import java.io.IOException;
 import java.sql.SQLException;
+import java.time.ZoneId;
 import java.util.Date;
 
 public class AjouterCommandeController {
 
     ServiceCommande serviceCommande = new ServiceCommande();
+
     @FXML
     private DatePicker datePicker;
 
@@ -45,13 +45,15 @@ public class AjouterCommandeController {
 
     @FXML
     void AjouterCommande(ActionEvent event) {
-        Date dp_orderDate = java.sql.Date.valueOf(datePicker.getValue());
+        Date dp_orderDate = Date.from(datePicker.getValue().atStartOfDay(ZoneId.systemDefault()).toInstant());
         try {
-            serviceCommande.ajouter(new Commande(Integer.parseInt(tf_idPanier.getText()),Integer.parseInt(tf_userid.getText()), dp_orderDate,tf_status.getText(),tf_modePaiement.getText(),tf_adresseLivraison.getText(),Float.parseFloat(tf_fraisLivraison.getText()),Float.parseFloat(tf_total.getText())));
+            // Ajout de la commande
+            serviceCommande.ajouter(new Commande(Integer.parseInt(tf_idPanier.getText()), Integer.parseInt(tf_userid.getText()), dp_orderDate, tf_status.getText(), tf_modePaiement.getText(), tf_adresseLivraison.getText(), Float.parseFloat(tf_fraisLivraison.getText()), Float.parseFloat(tf_total.getText())));
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("success");
-            alert.setContentText("Commande ajouté");
+            alert.setContentText("commande ajouté");
             alert.showAndWait();
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -67,5 +69,4 @@ public class AjouterCommandeController {
         }
 
     }
-
 }

@@ -45,6 +45,9 @@ public class ModifierCommandeController {
 
     @FXML
     private TextField tf_idPanier;
+
+    private Commande commande;
+
     private ServiceCommande serviceCommande;
 
     public ModifierCommandeController() {
@@ -121,5 +124,18 @@ public class ModifierCommandeController {
             e.printStackTrace();
             return null;
         }
+
+    }
+    public void initData(Commande commande) {
+        this.commande = commande;
+        // Remplir les champs de saisie avec les détails de la commande
+        tf_idPanier.setText(String.valueOf(commande.getIdPanier()));
+        tf_userID.setText(String.valueOf(commande.getUserID()));
+        tf_orderDate.setText(commande.getOrderDate().toString());
+        tf_status.setText(commande.getStatus());
+        tf_modePaiement.setText(commande.getModePaiement());
+        tf_adresseLivraison.setText(commande.getAdresseLivraison());
+        tf_fraisLivraison.setText(String.valueOf(commande.getFraisLivraison()));
+        tf_total.setText(String.valueOf(commande.getTotal()));
     }
 }

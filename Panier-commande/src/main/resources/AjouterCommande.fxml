@@ -63,6 +63,7 @@
                 </font>
             </TextField>
             <Button alignment="CENTER" layoutX="279.0" layoutY="448.0" mnemonicParsing="false" onAction="#AjouterCommande" prefHeight="34.0" prefWidth="106.0" style="-fx-background-color: #6fb5ff; -fx-background-radius: 2em; -fx-font-weight: bold;" text="Ajouter" textFill="#ffff">
+
                 <cursor>
                     <Cursor fx:constant="HAND" />
                 </cursor>
