@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModifierCommandeController">
+    <children>
+        <AnchorPane layoutX="28.0" layoutY="20.0" prefHeight="454.0" prefWidth="639.0" style="-fx-background-color: #00ffea; -fx-background-radius: 90;">
+            <children>
+                <Text fill="#000000" layoutX="184.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gérer vos commandes :">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Label layoutX="33.0" layoutY="406.0" text="Supprimer la commande" textFill="#000000">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="350.0" layoutY="406.0" text="Modifier la commande" textFill="#000000">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <Label layoutX="89.0" layoutY="58.0" text="Entrez l'idCommande :" textFill="#000000">
+                    <font>
+                        <Font name="Arial Rounded MT Bold" size="24.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="tf_idCommande" layoutX="401.0" layoutY="59.0" prefHeight="26.0" prefWidth="70.0" style="-fx-background-radius: 2em;">
+                    <cursor>
+                        <Cursor fx:constant="TEXT" />
+                    </cursor>
+                </TextField>
+                <Button fx:id="supprimerCommande" layoutX="134.0" layoutY="379.0" mnemonicParsing="false" text="Delete" />
+                <Button fx:id="modifierCommande" layoutX="452.0" layoutY="379.0" mnemonicParsing="false" text="Modify" />
+                <TextField fx:id="tf_idPanier" alignment="CENTER" layoutX="341.0" layoutY="93.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez l'idPanier" style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_userID" alignment="CENTER" layoutX="341.0" layoutY="133.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez userID" style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_status" alignment="CENTER" layoutX="341.0" layoutY="167.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez le status" style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_orderDate" alignment="CENTER" layoutX="341.0" layoutY="200.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez la date de commande " style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_modePaiement" alignment="CENTER" layoutX="341.0" layoutY="239.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez le modePaiement" style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_total" alignment="CENTER" layoutX="341.0" layoutY="344.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez le total" style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <TextField fx:id="tf_adresseLivraison" alignment="CENTER" layoutX="350.0" layoutY="277.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez l'adresseLivraison" style="-fx-background-radius: 2em;">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </TextField>
+                <Label layoutX="178.0" layoutY="168.0" style="-fx-font-weight: bold;" text="Status :" textFill="#000000">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Label layoutX="168.0" layoutY="94.0" style="-fx-font-weight: bold;" text="idPanier :" textFill="#000000">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Label layoutX="177.0" layoutY="135.0" style="-fx-font-weight: bold;" text="UserId :" textFill="#000000">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Label layoutX="129.0" layoutY="201.0" style="-fx-font-weight: bold;" text="Date de commande :" textFill="#000000">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+                <Label layoutX="159.0" layoutY="298.0" style="-fx-font-weight: bold;" textFill="#000000">
+                    <font>
+                        <Font size="19.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="tf_fraisLivraison" alignment="CENTER" layoutX="341.0" layoutY="311.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez les FraisLivraison" style="-fx-background-radius: 2em;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="136.0" layoutY="240.0" style="-fx-font-weight: bold;" text="mode de Paiement :" textFill="#000000">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="142.0" layoutY="278.0" style="-fx-font-weight: bold;" text="adresseLivraison :" textFill="#000000">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="145.0" layoutY="312.0" style="-fx-font-weight: bold;" text="FraisLivraison :" textFill="#000000">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="183.0" layoutY="345.0" style="-fx-font-weight: bold;" text="Total :" textFill="#000000">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

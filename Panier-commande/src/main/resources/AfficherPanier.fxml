@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6fffee" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherPanier">
+    <children>
+        <ImageView fitHeight="42.0" fitWidth="48.0" layoutX="542.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../main/java/images/panierlogo.png" />
+            </image>
+        </ImageView>
+        <Text layoutX="547.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panier" />
+        <Text layoutX="163.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 25px;-fx-font-weight: bold" text="Récapitulatif de votre panier" />
+
+        <ImageView fitHeight="84.0" fitWidth="120.0" layoutX="-6.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../main/java/images/musefix.png" />
+            </image>
+        </ImageView>
+        <TableView fx:id="tv_panier" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
+            <columns>
+                <TableColumn fx:id="col_userId" editable="false" prefWidth="108.79999083280563" sortable="false" text="userID" visible="false" />
+                <TableColumn fx:id="col_idProduit" editable="false" prefWidth="132.800048828125" sortable="false" text="idProduit" visible="false" />
+                <TableColumn fx:id="col_qte" prefWidth="117.59996032714844" text="Quantité" />
+                <TableColumn fx:id="col_prixUnite" prefWidth="128.0" text="PrixUnité" />
+                <TableColumn fx:id="col_sousTotal" prefWidth="116.0" text="sousTotal" />
+                <TableColumn fx:id="col_modifier" prefWidth="80" text="Modifier" />
+                <TableColumn fx:id="col_supprimer" prefWidth="80" text="Supprimer" />
+            </columns>
+        </TableView>
+
+        <!-- Ajout des TextField -->
+        <TextField fx:id="tf_prixUniteFilter" layoutX="120.0" layoutY="63.0" promptText="Prix Unité Filter" />
+        <TextField fx:id="tf_qteFilter" layoutX="283.0" layoutY="63.0" promptText="Quantité Filter" />
+    </children>
+</AnchorPane>

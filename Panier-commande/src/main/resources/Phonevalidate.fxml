@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.*?>
+
+
+<GridPane fx:controller="controllers.PhoneValidationController"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <Label text="Entrez un numéro de téléphone :"/>
+    <TextField fx:id="phoneNumberField" promptText="Ex: +123456789"/>
+    <Button  text="Valider" onAction="#validatePhoneNumber"/>
+
+</GridPane>

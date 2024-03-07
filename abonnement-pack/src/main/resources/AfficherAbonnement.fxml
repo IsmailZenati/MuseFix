@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="550.0" prefWidth="741.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherAbonnementController">
+   <children>
+      <TableView fx:id="tv_abonnement" layoutX="55.0" layoutY="125.0" prefHeight="299.0" prefWidth="632.0">
+        <columns>
+          <TableColumn fx:id="col_idabonnement" prefWidth="106.39996337890625" text="id_abonnement" />
+          <TableColumn fx:id="col_iduser" prefWidth="117.5999755859375" text="id_user" />
+            <TableColumn fx:id="col_idpack" prefWidth="132.79998779296875" text="id pack" />
+            <TableColumn fx:id="col_datedebut" prefWidth="142.39999389648438" text="date début" />
+            <TableColumn fx:id="col_datefin" prefWidth="132.0" text="date fin" />
+        </columns>
+      </TableView>
+      <Text fill="#00dcff" layoutX="141.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="WELCOME TO MUSEFIX">
+         <font>
+            <Font name="Arial Rounded MT Bold" size="36.0" />
+         </font>
+         <effect>
+            <Glow />
+         </effect>
+      </Text>
+      <Button layoutX="33.0" layoutY="459.0" mnemonicParsing="false" onAction="#modifierabonnement" prefHeight="30.0" prefWidth="170.0" style="-fx-background-color: #00dcff; -fx-font-weight: bold; -fx-background-radius: 2em;" text="Modifier Abonnement">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="523.0" layoutY="459.0" mnemonicParsing="false" onAction="#supprimerabonnement" prefHeight="32.0" prefWidth="195.0" style="-fx-background-color: #00dcff; -fx-font-weight: bold; -fx-background-radius: 2em;" text="Supprimer Abonnement">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button layoutX="260.0" layoutY="459.0" mnemonicParsing="false" onAction="#gererQRcode" prefHeight="32.0" prefWidth="186.0" style="-fx-background-radius: 90;" text="payer l'abonnement">
+         <font>
+            <Font name="Arial Black" size="14.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
