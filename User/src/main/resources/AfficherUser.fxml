@@ -1,25 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 
-<?import javafx.scene.control.Button?>
-<AnchorPane prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherUserController">
-    <children>
-        <TableView fx:id="userTableView" layoutY="81.0" prefHeight="318.0" prefWidth="800.0">
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.AfficherUserController">
+    <center>
+        <!-- Center content from the template -->
+        <AnchorPane prefHeight="211.0" prefWidth="800.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+         <children>
+        <TableView fx:id="userTableView" prefHeight="318.0" prefWidth="800.0">
             <columns>
                 <TableColumn fx:id="idColumn" prefWidth="50.0" text="ID" />
-                <TableColumn fx:id="emailColumn" prefWidth="141.5999755859375" text="Email" />
-                <TableColumn fx:id="passwordColumn" prefWidth="92.79998779296875" text="Password" />
-                <TableColumn fx:id="nomColumn" prefWidth="92.800048828125" text="Nom" />
-                <TableColumn fx:id="prenomColumn" prefWidth="81.5999755859375" text="Prenom" />
-                <TableColumn fx:id="roleColumn" prefWidth="43.199951171875" text="Role" />
-                <TableColumn fx:id="signupDateColumn" prefWidth="123.20013427734375" text="Date d'inscription" />
-                <TableColumn fx:id="adresseColumn" prefWidth="175.19989013671875" text="Adresse" />
+                <TableColumn fx:id="emailColumn" prefWidth="104.0" text="Email" />
+                <TableColumn fx:id="passwordColumn" prefWidth="101.59991455078125" text="Password" />
+                <TableColumn fx:id="nomColumn" prefWidth="85.5999755859375" text="Nom" />
+                <TableColumn fx:id="prenomColumn" text="Prenom" />
+                <TableColumn fx:id="roleColumn" prefWidth="62.39996337890625" text="Role" />
+                <TableColumn fx:id="signupDateColumn" prefWidth="145.60003662109375" text="Date d'inscription" />
+                <TableColumn fx:id="adresseColumn" minWidth="0.0" prefWidth="96.7999267578125" text="Adresse" />
+                <TableColumn fx:id="telColumn" prefWidth="254.4000244140625" text="Tel" />
+      
             </columns>
         </TableView>
-        <Button layoutX="40.0" layoutY="390.0" onAction="#modifier" text="Modifier" />
-        <Button layoutX="140.0" layoutY="390.0" onAction="#supprimer" text="Supprimer" />
+         </children></AnchorPane>
+    </center>
+   <top>
+        <AnchorPane prefHeight="166.0" prefWidth="800.0" style="-fx-background-color: #00dcff;" BorderPane.alignment="CENTER">
+    <children>
+        <Button layoutX="619.0" layoutY="126.0" onAction="#modifier" text="Modifier" />
+        <Button layoutX="694.0" layoutY="126.0" onAction="#supprimer" text="Supprimer" />
+        <Button layoutX="550.0" layoutY="126.0" onAction="#annuler" text="Annuler" />
+
     </children>
 </AnchorPane>
+   </top>
+</BorderPane>

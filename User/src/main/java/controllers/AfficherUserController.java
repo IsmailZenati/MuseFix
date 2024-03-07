@@ -1,7 +1,9 @@
 package controllers;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -52,17 +54,21 @@ public class AfficherUserController {
 
     @FXML
     private TableColumn<User, String> adresseColumn;
+    @FXML
+    private TableColumn<User, Integer> telColumn;
 
     public void initialize() {
         // Initialize the columns
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         emailColumn.setCellValueFactory(new PropertyValueFactory<>("email"));
-        passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
+        passwordColumn.setCellValueFactory(cellData -> new SimpleStringProperty("********")); // Replace ******** with your masking characters
         nomColumn.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenomColumn.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
         signupDateColumn.setCellValueFactory(new PropertyValueFactory<>("signupDate"));
         adresseColumn.setCellValueFactory(new PropertyValueFactory<>("adresse"));
+        telColumn.setCellValueFactory(new PropertyValueFactory<>("tel"));
+
 
         // Load data into TableView
         loadData();
@@ -121,6 +127,17 @@ public class AfficherUserController {
         } else {
             showAlert("Aucun utilisateur sélectionné", "Veuillez sélectionner un utilisateur à supprimer.");
         }
+    }
+    @FXML
+    void annuler(ActionEvent event) {
+        // Close the current stage (Afficher scene)
+        closeCurrentStage(event);
+    }
+
+    private void closeCurrentStage(ActionEvent event) {
+        Node sourceNode = (Node) event.getSource();
+        Stage currentStage = (Stage) sourceNode.getScene().getWindow();
+        currentStage.close();
     }
     private void showAlert(String title, String content) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);

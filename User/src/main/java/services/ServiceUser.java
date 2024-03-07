@@ -12,7 +12,8 @@ import java.util.Date;
 
 
 public class ServiceUser implements  IService<User>{
-    private final Decryptor decryptor = new Decryptor();
+    private final Encryptor encryptor = new Encryptor();
+
 
 
     Connection connection;
@@ -112,12 +113,11 @@ System.out.println("Personne supprimée");
                 u.setNom(rs.getString("nom"));
                 u.setPrenom(rs.getString("prenom"));
                 u.setEmail(rs.getString("email"));
-                u.setPassword(rs.getString("passwd")); // Retrieve the hashed password from the database
-                try {
-                    u.setDecryptedPassword(decryptor.decryptString(u.getPassword())); // Decrypt password
-                } catch (NoSuchAlgorithmException e) {
-                    e.printStackTrace();
-                }
+
+                u.setPassword(rs.getString("passwd")); // Decrypt password
+
+
+
                 u.setRole(rs.getString("role"));
                 u.setAdresse(rs.getString("adresse"));
                 u.setTel(rs.getInt("tel"));

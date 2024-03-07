@@ -4,20 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="Crud with interface rev 0.1">
-      <change afterPath="$PROJECT_DIR$/User/src/main/java/controllers/ModifierUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/Decryptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/Encryptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/User/src/main/resources/ModifierUser.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="2fcd32c5-7849-408f-a7cd-9b4cbfb98d58" name="Changes" comment="Crud with interface rev 0.5">
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/jaas_config.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/controllers/AdminMainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/controllers/InputValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/controllers/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/controllers/UserMainController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/images/locked.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/images/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/images/padlock.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/images/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/images/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/images/user1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/AuthenticationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/CustomCallbackHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/CustomLoginModule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/CustomPasswordField.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/java/services/RolePrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/AdminMain.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/Login.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/UserMain.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/jaas.config" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/User/src/main/resources/styles.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/lib.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/User/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/src/main/java/controllers/AfficherUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/controllers/AfficherUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/src/main/java/controllers/AjouterUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/controllers/AjouterUserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/controllers/ModifierUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/controllers/ModifierUserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/src/main/java/entities/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/entities/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/User/src/main/java/services/IService.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/services/IService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/services/Decryptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/services/Encryptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/services/Encryptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/src/main/java/services/ServiceUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/services/ServiceUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/java/tests/MainFX.java" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/java/tests/MainFX.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/User/src/main/resources/AfficherUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/resources/AfficherUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/resources/AjouterUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/resources/AjouterUser.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/User/src/main/resources/ModifierUser.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/User/src/main/resources/ModifierUser.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,6 +77,9 @@
       </UrlAndAccount>
     </option>
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 3
 }</component>
@@ -66,31 +92,40 @@
     <option name="openDirectoriesWithSingleClick" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;User&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/whove/Downloads/577c7bb58942e99df2771515c1e00c2d-f3356ce202ecd131da5c52597d4e940d28f17f96/577c7bb58942e99df2771515c1e00c2d-f3356ce202ecd131da5c52597d4e940d28f17f96&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.5011494&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "User",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/whove/Downloads/jfoenix-9.0.10.jar",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5011494",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\MuseFix\User\src\main\resources" />
+      <recent name="C:\wamp64\www\MuseFix\User\src\main\java\conf" />
+      <recent name="C:\wamp64\www\MuseFix\User\src\main\java" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.MainFX">
     <configuration name="MainFX" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="tests.MainFX" />
       <module name="User" />
-      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\JavaFX\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml " />
+      <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\JavaFX\javafx-sdk-21.0.2\lib&quot; --add-modules javafx.controls,javafx.fxml -Djava.security.auth.login.config=C:\wamp64\www\MuseFix\User\src\main\resources\jaas.config " />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -157,7 +192,16 @@
       <workItem from="1709134719073" duration="3554000" />
       <workItem from="1709202339825" duration="4547000" />
       <workItem from="1709220254049" duration="2394000" />
-      <workItem from="1709241604821" duration="5324000" />
+      <workItem from="1709241604821" duration="6892000" />
+      <workItem from="1709279282891" duration="1954000" />
+      <workItem from="1709281469915" duration="3620000" />
+      <workItem from="1709289768363" duration="13791000" />
+      <workItem from="1709460425139" duration="449000" />
+      <workItem from="1709463858843" duration="338000" />
+      <workItem from="1709631099583" duration="5342000" />
+      <workItem from="1709737139822" duration="1079000" />
+      <workItem from="1709740213388" duration="12283000" />
+      <workItem from="1709769265146" duration="17616000" />
     </task>
     <task id="LOCAL-00001" summary="User crud commit 1.00">
       <option name="closed" value="true" />
@@ -191,7 +235,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709134903659</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Crud with interface rev 0.5">
+      <option name="closed" value="true" />
+      <created>1709248183977</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709248183977</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,6 +265,7 @@
     <MESSAGE value="User crud commit 1.00" />
     <MESSAGE value="User crud commit 1.01" />
     <MESSAGE value="Crud with interface rev 0.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Crud with interface rev 0.1" />
+    <MESSAGE value="Crud with interface rev 0.5" />
+    <option name="LAST_COMMIT_MESSAGE" value="Crud with interface rev 0.5" />
   </component>
 </project>

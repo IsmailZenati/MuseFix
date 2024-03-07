@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="main-pane" xmlns="http://javafx.com/javafx/17.0.2-ea"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+<stylesheets>
+    <URL value="/styles.css"/>
+</stylesheets>
+    <Label layoutX="266.0" layoutY="14.0" styleClass="login-label" text="Login"/>
+
+    <!-- Username label and image -->
+    <Label layoutX="14.0" layoutY="138.0" styleClass="input-label" text="Username:"/>
+    <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="128.0" layoutY="132.0">
+        <Image url="@../../main/java/images/user1.png"/>
+    </ImageView>
+    <MFXTextField fx:id="usernameField" layoutX="196.0" layoutY="122.0" prefHeight="50.0" prefWidth="223.0"
+                  styleClass="input-field"/>
+
+    <!-- Password label and image -->
+    <Label layoutX="16.0" layoutY="211.0" styleClass="input-label" text="Password:"/>
+    <ImageView fitHeight="35.0" fitWidth="36.0" layoutX="128.0" layoutY="216.0">
+        <Image url="@../../main/java/images/padlock.png"/>
+    </ImageView>
+    <MFXPasswordField fx:id="CustomPasswordField" layoutX="196.0" layoutY="206.0" prefHeight="50.0" prefWidth="223.0" styleClass="input-field"/>
+
+
+    <!-- Login button -->
+    <MFXButton fx:id="loginButton" layoutX="219.0" layoutY="285.0" mnemonicParsing="false"
+               onAction="#login" prefHeight="28.0" prefWidth="177.0"
+               styleClass="login-button" text="Login"/>
+
+
+    <Label fx:id="errorMessage" styleClass="error-message"/>
+
+
+    <!-- Error message label -->
+</AnchorPane>

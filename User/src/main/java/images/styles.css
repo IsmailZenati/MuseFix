@@ -1,0 +1,75 @@
+/* Define styles for the main pane */
+.main-pane {
+    -fx-background-color: #eceff1; /* Light blue-grey background */
+}
+
+/* Define styles for the login label */
+.login-label {
+    -fx-font-size: 24px;
+    -fx-text-fill: #37474f; /* Dark grey text color */
+}
+
+/* Define styles for input labels */
+.input-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #455a64; /* Medium grey text color */
+}
+
+/* Define styles for input fields */
+.input-field {
+    -fx-background-color: #ffffff; /* White background */
+    -fx-font-size: 14px;
+    -fx-text-fill: #37474f; /* Dark grey text color */
+    -fx-prompt-text-fill: #90a4ae; /* Light grey prompt text color */
+}
+
+/* Define styles for login button */
+.login-button {
+    -fx-background-color: #4caf50; /* Material green color */
+    -fx-text-fill: #ffffff; /* White text color */
+    -fx-font-size: 14px;
+}
+
+/* Add more styles as needed */
+/* styles.css */
+.login-button:hover {
+    -fx-background-color: derive(-fx-base, 20%);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}
+/* styles.css */
+.error-message {
+    -fx-text-fill: red;
+    -fx-font-weight: bold;
+}
+
+/* Styling for login button */
+.login-button {
+    -fx-background-color: #2f3f62; /* Green color */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-pref-width: 120px;
+    -fx-pref-height: 40px;
+}
+
+/* Styling for cool-button */
+.cool-button {
+    -fx-background-color: #3498db; /* Blue color */
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 12px;
+    -fx-pref-width: 80px;
+    -fx-pref-height: 30px;
+}
+
+/* Styling for error message label */
+.error-message {
+    -fx-text-fill: red;
+    -fx-font-size: 12px;
+}
+
+/* Hover effect for buttons */
+.button:hover {
+    -fx-background-color: derive(-fx-base, 20%);
+    -fx-scale-x: 1.1;
+    -fx-scale-y: 1.1;
+}

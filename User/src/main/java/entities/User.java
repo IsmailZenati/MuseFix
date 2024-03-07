@@ -7,7 +7,7 @@ public class User {
 
     private String email;
     private String password;
-    private String decryptedPassword;
+
     private String nom; // Name
     private String prenom; // Last name
     private String role;
@@ -51,13 +51,9 @@ public class User {
     public String getAdresse() { return adresse; }
     public void setAdresse(String  adresse) { this.adresse = adresse; }
     public void setSignupDate(Date signupDate) { this.signupDate = signupDate; }
-    public String getDecryptedPassword() {
-        return decryptedPassword;
-    }
 
-    public void setDecryptedPassword(String decryptedPassword) {
-        this.decryptedPassword = decryptedPassword;
-    }
+
+
     @Override
     public String toString() {
         return "User{" +

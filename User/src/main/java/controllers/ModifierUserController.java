@@ -8,11 +8,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import services.Encryptor;
 import services.ServiceUser;
 
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 import java.time.ZoneId;
 import java.util.Date;
@@ -20,6 +23,7 @@ import java.util.Date;
 public class ModifierUserController {
 
     private final ServiceUser serviceUser = new ServiceUser();
+    private final Encryptor encryptor = new Encryptor();
 
     @FXML
     private TextField tf_nom;
@@ -31,7 +35,8 @@ public class ModifierUserController {
     private TextField tf_email;
 
     @FXML
-    private TextField tf_password;
+    private PasswordField tf_password;
+
 
     @FXML
     private TextField tf_role;
@@ -74,7 +79,14 @@ public class ModifierUserController {
             selectedUser.setNom(tf_nom.getText());
             selectedUser.setPrenom(tf_prenom.getText());
             selectedUser.setEmail(tf_email.getText());
-            selectedUser.setPassword(tf_password.getText());
+
+            try {
+                String encryptedPassword = encryptor.encryptString(tf_password.getText());
+                selectedUser.setPassword(encryptedPassword); // Encrypt the new password
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+                // Handle encryption error
+            }
             selectedUser.setRole(tf_role.getText());
             selectedUser.setTel(Integer.parseInt(tf_tel.getText()));
             selectedUser.setAdresse(tf_adresse.getText());

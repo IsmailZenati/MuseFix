@@ -8,7 +8,7 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="controllers.ModifierUserController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #000000;">
     <children>
         <TextField fx:id="tf_nom" layoutX="240.0" layoutY="60.0" promptText="Nom" />
         <TextField fx:id="tf_prenom" layoutX="240.0" layoutY="110.0" promptText="Prénom" />
