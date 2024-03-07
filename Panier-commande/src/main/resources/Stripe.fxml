@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.*?>
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.StripeController">
+    <stylesheets>
+
+    </stylesheets>
+    <children>
+        <ImageView>
+            <image>
+                <Image url="https://stripe.com/img/v3/home/twitter.png" />
+            </image>
+        </ImageView>
+        <Label text="Paiement par carte" style="-fx-font-size: 24px; -fx-font-weight: bold;" layoutX="42.0" layoutY="0.0"/>
+
+        <Label layoutX="42.0" layoutY="50.0" text="Card Number:" />
+        <TextField fx:id="cardNumberField" layoutX="144.0" layoutY="46.0" promptText="Card Number" styleClass="text-field"/>
+
+        <Label layoutX="42.0" layoutY="100.0" text="Exp Month:" />
+        <TextField fx:id="expMonthField" layoutX="144.0" layoutY="96.0" promptText="MM" styleClass="text-field"/>
+
+        <Label layoutX="42.0" layoutY="150.0" text="Exp Year:" />
+        <TextField fx:id="expYearField" layoutX="144.0" layoutY="146.0" promptText="YYYY" styleClass="text-field"/>
+
+        <Label layoutX="42.0" layoutY="200.0" text="CVC:" />
+        <TextField fx:id="cvcField" layoutX="144.0" layoutY="196.0" promptText="CVC" styleClass="text-field"/>
+
+        <Button fx:id="payButton" layoutX="144.0" layoutY="242.0" text="Pay" styleClass="pay-button"/>
+
+        <Label fx:id="statusLabel" layoutX="42.0" layoutY="292.0" styleClass="status-label"/>
+    </children>
+</AnchorPane>
