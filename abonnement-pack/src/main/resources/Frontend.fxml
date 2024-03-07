@@ -19,7 +19,7 @@
                   <Font name="Arial Rounded MT Bold" size="36.0" />
                </font>
             </Text>
-            <Text fill="WHITE" layoutX="27.0" layoutY="483.0" strokeType="OUTSIDE" strokeWidth="0.0" text="choisir  le type du pack de music : ">
+            <Text fill="WHITE" layoutX="23.0" layoutY="509.0" strokeType="OUTSIDE" strokeWidth="0.0" text="do you want to buy a pack of songs ?">
                <font>
                   <Font name="Arial Rounded MT Bold" size="24.0" />
                </font>
@@ -29,7 +29,7 @@
                   <Font name="Arial Nova Cond" size="24.0" />
                </font>
             </Text>
-            <Button fx:id="getpremium" layoutX="214.0" layoutY="254.0" mnemonicParsing="false" onAction="#ajouterabonnement" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="get Premium free" textFill="WHITE">
+            <Button fx:id="getpremium" layoutX="123.0" layoutY="275.0" mnemonicParsing="false" onAction="#ajouterabonnement" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="get Premium Subscription" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -37,7 +37,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="learnmore" layoutX="450.0" layoutY="252.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="Learn more" textFill="WHITE">
+            <Button fx:id="learnmore" layoutX="466.0" layoutY="274.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="take a QUIZ" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -45,7 +45,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="buypack" layoutX="499.0" layoutY="460.0" mnemonicParsing="false" onAction="#ajouterpack" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #bf212f;" text="buy Pack" textFill="WHITE">
+            <Button fx:id="buypack" layoutX="490.0" layoutY="484.0" mnemonicParsing="false" onAction="#ajouterpack" prefHeight="32.0" prefWidth="112.0" style="-fx-background-color: #bf212f;" text="buy Pack" textFill="WHITE">
                <font>
                   <Font name="Britannic Bold" size="14.0" />
                </font>
@@ -65,18 +65,18 @@
                   </Text>
                </children>
             </AnchorPane>
-            <Text fill="#edcc6f" layoutX="79.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already subscribed ?">
+            <Text fill="#edcc6f" layoutX="72.0" layoutY="395.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Already subscribed ?">
                <font>
                   <Font name="Arial Rounded MT Bold" size="18.0" />
                </font>
             </Text>
-            <Text fill="#e10707" layoutX="366.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your  subscription ID:">
+            <Text fill="#e10707" layoutX="402.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter your  subscription ID:">
                <font>
                   <Font size="18.0" />
                </font>
             </Text>
-            <TextField layoutX="602.0" layoutY="328.0" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 2em;" />
-            <Button fx:id="confirme" layoutX="450.0" layoutY="368.0" mnemonicParsing="false" onAction="#handleLearnMoreButtonClick" prefHeight="26.0" prefWidth="75.0" style="-fx-background-color: #b3fc07;" text="Confirm" textFill="#fa0707">
+            <TextField layoutX="649.0" layoutY="375.0" prefHeight="26.0" prefWidth="75.0" style="-fx-background-radius: 2em;" />
+            <Button fx:id="confirme" layoutX="487.0" layoutY="423.0" mnemonicParsing="false" onAction="#handleLearnMoreButtonClick" prefHeight="26.0" prefWidth="75.0" style="-fx-background-color: #b3fc07;" text="Confirm" textFill="#fa0707">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -85,12 +85,13 @@
                </font></Button>
             <!-- Progress Indicator -->
 
-            <ProgressIndicator fx:id="progressindicator" layoutX="258.0" layoutY="254.0" prefHeight="41.0" prefWidth="69.0">
+            <ProgressIndicator fx:id="progressindicator" layoutX="190.0" layoutY="269.0" prefHeight="41.0" prefWidth="69.0">
                <cursor>
                   <Cursor fx:constant="NONE" />
                </cursor>
             </ProgressIndicator>
-            <ProgressIndicator fx:id="progressindicator2" layoutX="530.0" layoutY="460.0" />
+            <ProgressIndicator fx:id="progressindicator2" layoutX="520.0" layoutY="474.0" />
+            <ProgressIndicator layoutX="525.0" layoutY="274.0" />
          </children>
       </AnchorPane>
    </children>

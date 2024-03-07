@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class MyDatabase {
 
-    final String URL="jdbc:mysql://localhost:3306/music?autoReconnect=true&useSSL=false";
+    final String URL="jdbc:mysql://localhost:3306/mysql?autoReconnect=true&useSSL=false";
     final String USERNAME="root";
     final String PASSWORD="";
    static MyDatabase instance;

@@ -54,7 +54,7 @@ public class FrontendController {
         // When the task is finished (after 5 seconds), hide the progress indicator and show a message
         task.setOnSucceeded(e -> {
             progressindicator.setVisible(false);
-            showAlert(AlertType.INFORMATION, "Success", "You have successfully obtained the premium for free!");
+            showAlert(AlertType.INFORMATION, "Success", "You have successfully obtained the premium Subscription!");
         });
 
         // Start the task

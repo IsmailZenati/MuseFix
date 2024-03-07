@@ -105,7 +105,7 @@ public class AfficherAbonnementController {
         try {
             abonnement selectedAbonnement = tv_abonnement.getSelectionModel().getSelectedItem();
             if (selectedAbonnement != null) {
-                showAlert(Alert.AlertType.INFORMATION, "Stripe API Utilisée", "L'API Stripe est utilisée pour traiter le paiement.");
+                showAlert(Alert.AlertType.INFORMATION, "Stripe API Utilisée", "Paiement en cours de traitement...");
                 // Intégration Stripe : Exemple de création d'un paiement
                 Stripe.apiKey = "sk_test_51OqiEOGjfoBklovpNyFwgkNUmmPvbzZYjF4hCmYozOTi6YjYDTaC9dC65LPzucDuxNNsbak6i295szOk7zoHAuum00kJVS4yNM";
                 Charge charge = Charge.create(
@@ -116,7 +116,7 @@ public class AfficherAbonnementController {
                                 .setSource("tok_visa") // Token de carte de crédit
                                 .build()
                 );
-
+                showAlert(Alert.AlertType.INFORMATION, "Paiement Réussi", "Le paiement a été effectué avec succès.");
                 // Génération du QR code après le paiement réussi ou toute autre logique que vous souhaitez ajouter
                 generateQRCode(selectedAbonnement);
             } else {
@@ -126,6 +126,7 @@ public class AfficherAbonnementController {
             showAlert(Alert.AlertType.ERROR, "Erreur Stripe", "Erreur lors de la transaction avec Stripe : " + e.getMessage());
         }
     }
+
 
     private void generateQRCode(abonnement selectedAbonnement) {
         try {
