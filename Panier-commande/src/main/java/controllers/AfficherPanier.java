@@ -52,14 +52,21 @@ public class AfficherPanier {
     private Predicate<Panier> filterPredicate;
 
     @FXML
-    void initialize() {
+    private TableColumn<Panier, Void> col_modifier;
+
+    @FXML
+    private TableColumn<Panier, Void> col_supprimer;
+
+    @FXML
+    void initialize() throws SQLException {
         // Initialisation du prédicat de filtrage
         filterPredicate = panier -> true;
 
         // Mettre à jour le prédicat de filtrage lors de la saisie dans les champs de texte
         tf_prixUniteFilter.textProperty().addListener((observable, oldValue, newValue) -> updateFilterPredicate());
         tf_qteFilter.textProperty().addListener((observable, oldValue, newValue) -> updateFilterPredicate());
-
+        ObservableList<Panier> paniers = FXCollections.observableList(servicePanier.afficher());
+        tv_panier.setItems(paniers);
         // Définition des cellules de la TableView
         col_userId.setCellValueFactory(new PropertyValueFactory<>("userID"));
         col_idProduit.setCellValueFactory(new PropertyValueFactory<>("idProduit"));
@@ -68,7 +75,7 @@ public class AfficherPanier {
         col_sousTotal.setCellValueFactory(new PropertyValueFactory<>("sousTotal"));
 
         // Ajouter les colonnes Modifier et Supprimer
-        TableColumn<Panier, Void> col_modifier = new TableColumn<>("Modifier");
+
         col_modifier.setCellFactory(param -> new TableCell<Panier, Void>() {
             private final Button modifierButton = new Button("Modifier");
 
@@ -92,7 +99,6 @@ public class AfficherPanier {
             }
         });
 
-        TableColumn<Panier, Void> col_supprimer = new TableColumn<>("Supprimer");
         col_supprimer.setCellFactory(param -> new TableCell<Panier, Void>() {
             private final Button supprimerButton = new Button("Supprimer");
 
@@ -124,7 +130,6 @@ public class AfficherPanier {
             }
         });
 
-        tv_panier.getColumns().addAll(col_modifier, col_supprimer);
 
         // Charger et afficher les données initiales
         try {
