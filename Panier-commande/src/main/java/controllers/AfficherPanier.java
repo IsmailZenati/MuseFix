@@ -55,6 +55,9 @@ public class AfficherPanier {
     private TableColumn<Panier, Void> col_supprimer;
 
     @FXML
+    private Label lbl_total; // Ajout du label pour afficher le total
+
+    @FXML
     void initialize() throws SQLException {
         // Initialisation du prédicat de filtrage
         filterPredicate = panier -> true;
@@ -178,11 +181,11 @@ public class AfficherPanier {
             boolean prixPass = true;
 
             if (!tf_qteFilter.getText().isEmpty()) {
-                qtePass = panier.getQte() >= Integer.parseInt(tf_qteFilter.getText());
+                qtePass = panier.getQte() > Integer.parseInt(tf_qteFilter.getText());
             }
 
             if (!tf_prixUniteFilter.getText().isEmpty()) {
-                prixPass = panier.getPrixUnite() <= Float.parseFloat(tf_prixUniteFilter.getText());
+                prixPass = panier.getPrixUnite() < Float.parseFloat(tf_prixUniteFilter.getText());
             }
 
             return qtePass && prixPass;
@@ -241,7 +244,6 @@ public class AfficherPanier {
         for (Panier panier : tv_panier.getItems()) {
             total += panier.getPrixUnite() * panier.getQte();
         }
-        // Mettre à jour l'affichage du total ici
-        System.out.println("Total: " + total); // Exemple de mise à jour de l'affichage du total
+        lbl_total.setText("Total: " + total); // Mettre à jour le texte du label avec le total calculé
     }
 }
