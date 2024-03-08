@@ -53,10 +53,10 @@ public class StripeController {
 
         try {
             Charge charge = Charge.create(chargeParams);
-            statusLabel.setText("Payment successful: " + charge.getId());
+            statusLabel.setText("Paiement Réussi: " + charge.getId());
         } catch (StripeException e) {
             e.printStackTrace();
-            statusLabel.setText("Payment failed: " + e.getMessage());
+            statusLabel.setText("Erreur de Paiement: " + e.getMessage());
         }
     }
 }

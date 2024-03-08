@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import services.ServicePhone;
 import java.io.IOException;
 
@@ -15,6 +17,11 @@ public class PhoneValidationController {
 
     @FXML
     private Button validateButton;
+
+    @FXML
+    private ImageView imageView; // Ajout du champ imageView
+
+
 
     @FXML
     void validatePhoneNumber(ActionEvent event) {
