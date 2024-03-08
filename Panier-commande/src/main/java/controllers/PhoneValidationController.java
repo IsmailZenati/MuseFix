@@ -2,11 +2,15 @@ package controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 import services.ServicePhone;
 import java.io.IOException;
 
@@ -29,9 +33,9 @@ public class PhoneValidationController {
         try {
             boolean isValid = ServicePhone.validateNumber(phoneNumber);
             if (isValid) {
-                showAlert("Valid Phone Number", "The phone number is valid.");
+                showAlert("Numéro de téléphone valide", "Le numéro de téléphone est valide. Nous vous contacterons à ce numéro.");
             } else {
-                showAlert("Invalid Phone Number", "The phone number is not valid.");
+                showAlert("Numéro de téléphone invalide", "Le numéro de téléphone n'est pas valide.");
             }
         } catch (IOException | InterruptedException e) {
             e.printStackTrace();
@@ -46,4 +50,5 @@ public class PhoneValidationController {
         alert.setContentText(message);
         alert.showAndWait();
     }
+
 }

@@ -41,20 +41,5 @@ public class MainFx extends Application {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
-        try {
-            // Charger une deuxième interface FXML
-            Parent root2 = FXMLLoader.load(getClass().getResource("/Phonevalidate.fxml"));
-
-            // Créer une nouvelle scène avec la deuxième interface FXML chargée
-            Scene scene2 = new Scene(root2,400,400);
-
-            // Créer une nouvelle fenêtre pour la deuxième scène
-            Stage secondStage = new Stage();
-            secondStage.setScene(scene2);
-            secondStage.setTitle("Vérification du numéro de téléphone");
-            secondStage.show();
-        } catch (IOException e) {
-            System.out.println(e.getMessage());
-        }
     }
 }

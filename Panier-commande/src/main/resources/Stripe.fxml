@@ -30,7 +30,8 @@
         <TextField fx:id="cvcField" layoutX="144.0" layoutY="196.0" promptText="CVC" styleClass="text-field"/>
 
         <Button fx:id="payButton" layoutX="144.0" layoutY="242.0" text="Pay" styleClass="pay-button"/>
-
+        <Label layoutY="415.0" layoutX="10" text="Fournissez le numéro de téléphone en cas de panne :" />
+        <Button fx:id="Valider" text="Validez votre numéro de téléphone" onAction="#handleValiderPhone" layoutY="410.0" layoutX="305.0" />
         <Label fx:id="statusLabel" layoutX="42.0" layoutY="292.0" styleClass="status-label"/>
     </children>
 </AnchorPane>
