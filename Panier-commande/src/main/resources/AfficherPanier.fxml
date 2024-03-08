@@ -24,7 +24,7 @@
                 <Image url="@../../main/java/images/musefix.png" />
             </image>
         </ImageView>
-        <TableView fx:id="tv_panier" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
+        <TableView fx:id="tv_panier" layoutX="70" layoutY="90.0" prefHeight="310.0" prefWidth="523.0">
             <columns>
                 <TableColumn fx:id="col_userId" editable="false" prefWidth="108.79999083280563" sortable="false" text="userID" visible="false" />
                 <TableColumn fx:id="col_idProduit" editable="false" prefWidth="132.800048828125" sortable="false" text="idProduit" visible="false" />
@@ -35,7 +35,7 @@
                 <TableColumn fx:id="col_supprimer" prefWidth="80" text="Supprimer" />
             </columns>
         </TableView>
-        <Button fx:id="commanderButton" text="Commander" onAction="#openModifierPanierDialog" layoutY="410.0" layoutX="275.0" />
+        <Button fx:id="commanderButton" layoutX="275.0" layoutY="410.0" onAction="#openModifierPanierDialog" text="Commander" />
         <!-- Ajout des TextField -->
         <TextField fx:id="tf_prixUniteFilter" layoutX="120.0" layoutY="63.0" promptText="Prix Unité Filter" />
         <TextField fx:id="tf_qteFilter" layoutX="283.0" layoutY="63.0" promptText="Quantité Filter" />

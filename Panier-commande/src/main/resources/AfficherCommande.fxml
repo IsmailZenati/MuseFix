@@ -17,7 +17,7 @@
                 <Image url="https://previews.123rf.com/images/alekseyvanin/alekseyvanin1705/alekseyvanin170502749/77956258-ic%C3%B4ne-de-la-ligne-de-commande-signe-vectoriel-pictogramme-de-style-lin%C3%A9aire-isol%C3%A9-sur-blanc.jpg" />
             </image>
         </ImageView>
-        <TableView fx:id="tv_commande" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
+        <TableView fx:id="tv_commande" layoutX="70" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
             <columns>
                 <TableColumn fx:id="col_panierID" editable="false" prefWidth="59.99999922513962" sortable="false" text="userID" visible="false" />
                 <TableColumn fx:id="col_userID" editable="false" prefWidth="59.99999922513962" sortable="false" text="userID" visible="false" />
