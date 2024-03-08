@@ -17,12 +17,7 @@
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                     </font>
                 </Text>
-                <Label layoutX="33.0" layoutY="406.0" text="Supprimer la commande" textFill="#000000">
-                    <font>
-                        <Font name="Arial Rounded MT Bold" size="24.0" />
-                    </font>
-                </Label>
-                <Label layoutX="350.0" layoutY="406.0" text="Modifier la commande" textFill="#000000">
+                <Label layoutX="193.0" layoutY="412.0" text="Modifier la commande" textFill="#000000">
                     <font>
                         <Font name="Arial Rounded MT Bold" size="24.0" />
                     </font>
@@ -37,8 +32,7 @@
                         <Cursor fx:constant="TEXT" />
                     </cursor>
                 </TextField>
-                <Button fx:id="supprimerCommande" layoutX="134.0" layoutY="379.0" mnemonicParsing="false" text="Delete" />
-                <Button fx:id="modifierCommande" layoutX="452.0" layoutY="379.0" mnemonicParsing="false" text="Modify" />
+                <Button fx:id="modifierCommande" layoutX="293.0" layoutY="386.0" mnemonicParsing="false" text="Modify" />
                 <TextField fx:id="tf_idPanier" alignment="CENTER" layoutX="341.0" layoutY="93.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez l'idPanier" style="-fx-background-radius: 2em;">
                     <font>
                         <Font size="14.0" />
@@ -69,7 +63,7 @@
                         <Font size="14.0" />
                     </font>
                 </TextField>
-                <TextField fx:id="tf_adresseLivraison" alignment="CENTER" layoutX="350.0" layoutY="277.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez l'adresseLivraison" style="-fx-background-radius: 2em;">
+                <TextField fx:id="tf_adresseLivraison" alignment="CENTER" layoutX="341.0" layoutY="277.0" prefHeight="20.0" prefWidth="190.0" promptText="Entrez l'adresseLivraison" style="-fx-background-radius: 2em;">
                     <font>
                         <Font size="14.0" />
                     </font>

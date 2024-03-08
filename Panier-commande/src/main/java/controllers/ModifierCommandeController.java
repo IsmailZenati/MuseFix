@@ -117,7 +117,7 @@ public class ModifierCommandeController {
     // Method to parse date string to Date object
     private Date parseDate(String dateString) {
         try {
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
             return dateFormat.parse(dateString);
         } catch (ParseException e) {
             // Handle parsing exception
@@ -128,16 +128,24 @@ public class ModifierCommandeController {
     }
 
     // Cette méthode est appelée pour initialiser les données de commande
+    // Cette méthode est appelée pour initialiser les données de commande
     public void initData(Commande commande) {
         this.commande = commande;
         // Remplir les champs de saisie avec les détails de la commande
+        tf_idCommande.setText(String.valueOf((commande.getIdCommande())));
         tf_idPanier.setText(String.valueOf(commande.getIdPanier()));
         tf_userID.setText(String.valueOf(commande.getUserID()));
-        tf_orderDate.setText(commande.getOrderDate().toString());
+
+        // Formatage de la date avant de l'afficher
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String orderDateString = dateFormat.format(commande.getOrderDate());
+        tf_orderDate.setText(orderDateString);
+
         tf_status.setText(commande.getStatus());
         tf_modePaiement.setText(commande.getModePaiement());
         tf_adresseLivraison.setText(commande.getAdresseLivraison());
         tf_fraisLivraison.setText(String.valueOf(commande.getFraisLivraison()));
         tf_total.setText(String.valueOf(commande.getTotal()));
     }
+
 }

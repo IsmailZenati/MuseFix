@@ -76,7 +76,7 @@ public class ServiceCommande implements IService<Commande> {
 
 
     // Update
-    public void modifier(Commande commande) throws SQLException {
+    public void modifieradmin(Commande commande) throws SQLException {
         String req = "UPDATE commande SET status = ? WHERE idCommande = ?";
         try (PreparedStatement statement = connection.prepareStatement(req)) {
             statement.setString(1, commande.getStatus());
@@ -84,7 +84,7 @@ public class ServiceCommande implements IService<Commande> {
             statement.executeUpdate();
         }
     }
-    public void modifieruser(Commande commande) throws SQLException {
+    public void modifier(Commande commande) throws SQLException {
         String req = "UPDATE commande SET modePaiement = ?,adresseLivraison = ? WHERE idCommande = ?";
         try (PreparedStatement statement = connection.prepareStatement(req)) {
             statement.setString(1, commande.getModePaiement());
