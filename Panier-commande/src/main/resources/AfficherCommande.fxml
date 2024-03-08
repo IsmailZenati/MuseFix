@@ -14,12 +14,7 @@
         <Text layoutX="163.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-size: 20px;-fx-font-weight: bold" text="Voici le récapitulatif de vos commandes" />
         <ImageView fitHeight="98.0" fitWidth="154.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../../main/java/images/musefix.png" />
-            </image>
-        </ImageView>
-        <ImageView fitHeight="91.0" fitWidth="75.0" layoutX="542.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
-            <image>
-                <Image url="@../../main/java/images/commandelogo.png" />
+                <Image url="https://previews.123rf.com/images/alekseyvanin/alekseyvanin1705/alekseyvanin170502749/77956258-ic%C3%B4ne-de-la-ligne-de-commande-signe-vectoriel-pictogramme-de-style-lin%C3%A9aire-isol%C3%A9-sur-blanc.jpg" />
             </image>
         </ImageView>
         <TableView fx:id="tv_commande" layoutY="90.0" prefHeight="310.0" prefWidth="601.0">
@@ -34,8 +29,8 @@
                 <TableColumn fx:id="col_total" prefWidth="56.800048828125" text="Total" />
                 <TableColumn fx:id="col_modifier" prefWidth="80" text="Modifier" />
                 <TableColumn fx:id="col_supprimer" prefWidth="80" text="Supprimer" />
-
             </columns>
         </TableView>
+        <Button fx:id="payerButton" text="Payer" onAction="#handlePayerButton" layoutY="410.0" layoutX="275.0"/>
     </children>
 </AnchorPane>

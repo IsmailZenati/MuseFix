@@ -7,6 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
+import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -57,6 +58,7 @@ public class AfficherCommande {
     @FXML
     private TableColumn<Commande, Void> col_supprimer;
 
+
     @FXML
     private TableView<Commande> tv_commande;
 
@@ -91,6 +93,7 @@ public class AfficherCommande {
                         }
                     });
                 }
+
 
                 @Override
                 protected void updateItem(Void item, boolean empty) {
@@ -159,4 +162,18 @@ public class AfficherCommande {
             e.printStackTrace();
         }
     }
+    @FXML
+    void handlePayerButton(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/Stripe.fxml"));
+        Parent root;
+        try {
+            root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 }
