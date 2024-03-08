@@ -1,19 +1,19 @@
 package controllers;
 
-import entities.Commande;
-import entities.Panier;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import entities.Panier;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.VBox;
+import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.stage.Stage;
+import javafx.util.converter.IntegerStringConverter;
 import org.apache.commons.collections4.Predicate;
 import services.ServicePanier;
 
@@ -40,9 +40,6 @@ public class AfficherPanier {
     private TableColumn<Panier, Float> col_prixUnite;
 
     @FXML
-    private TableColumn<Panier, Integer> col_qte;
-
-    @FXML
     private TableColumn<Panier, Float> col_sousTotal;
 
     @FXML
@@ -66,17 +63,56 @@ public class AfficherPanier {
         // Mettre à jour le prédicat de filtrage lors de la saisie dans les champs de texte
         tf_prixUniteFilter.textProperty().addListener((observable, oldValue, newValue) -> updateFilterPredicate());
         tf_qteFilter.textProperty().addListener((observable, oldValue, newValue) -> updateFilterPredicate());
-        ObservableList<Panier> paniers = FXCollections.observableList(servicePanier.afficher());
-        tv_panier.setItems(paniers);
+
         // Définition des cellules de la TableView
         col_userId.setCellValueFactory(new PropertyValueFactory<>("userID"));
         col_idProduit.setCellValueFactory(new PropertyValueFactory<>("idProduit"));
-        col_qte.setCellValueFactory(new PropertyValueFactory<>("qte"));
         col_prixUnite.setCellValueFactory(new PropertyValueFactory<>("prixUnite"));
         col_sousTotal.setCellValueFactory(new PropertyValueFactory<>("sousTotal"));
 
         // Ajouter les colonnes Modifier et Supprimer
+        addEditAndDeleteButtons();
 
+        // Ajouter une colonne de quantité éditable
+        addEditableQuantityColumn();
+
+        // Charger et afficher les données initiales
+        try {
+            afficherDonnees();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        tv_panier.setEditable(true);
+    }
+
+    private void addEditableQuantityColumn() {
+        TableColumn<Panier, Integer> col_quantiteEditable = new TableColumn<>("Quantité");
+        col_quantiteEditable.setCellValueFactory(new PropertyValueFactory<>("qte"));
+
+        col_quantiteEditable.setCellFactory(TextFieldTableCell.forTableColumn(new IntegerStringConverter()));
+
+        col_quantiteEditable.setOnEditCommit((TableColumn.CellEditEvent<Panier, Integer> event) -> {
+            TablePosition<Panier, Integer> pos = event.getTablePosition();
+            int newQuantity = event.getNewValue();
+            int row = pos.getRow();
+            Panier panier = event.getTableView().getItems().get(row);
+            int oldQuantity = panier.getQte();
+            panier.setQte(newQuantity);
+
+            // Recalculer le sous-total
+            float prixUnite = panier.getPrixUnite();
+            float newSousTotal = prixUnite * newQuantity;
+            panier.setSousTotal(newSousTotal);
+
+            updateTotal(); // Assurez-vous que la méthode updateTotal() est bien appelée ici
+        });
+
+        col_quantiteEditable.setEditable(true); // Assurez-vous que la colonne est éditable
+
+        tv_panier.getColumns().add(col_quantiteEditable); // Ajouter la colonne uniquement une fois
+    }
+
+    private void addEditAndDeleteButtons() {
         col_modifier.setCellFactory(param -> new TableCell<Panier, Void>() {
             private final Button modifierButton = new Button("Modifier");
 
@@ -108,7 +144,7 @@ public class AfficherPanier {
                     Panier panierSelectionne = getTableView().getItems().get(getIndex());
                     if (panierSelectionne != null) {
                         try {
-                            servicePanier.supprimer(panierSelectionne.getIdPanier()); // Adapter la méthode supprimer selon votre implémentation
+                            servicePanier.supprimer(panierSelectionne.getIdPanier());
                             tv_panier.getItems().remove(panierSelectionne);
                             System.out.println("Panier with ID " + panierSelectionne.getIdPanier() + " deleted successfully.");
                         } catch (SQLException e) {
@@ -130,34 +166,22 @@ public class AfficherPanier {
                 }
             }
         });
-
-
-        // Charger et afficher les données initiales
-        try {
-            afficherDonnees();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
     }
 
     private void afficherDonnees() throws SQLException {
-        // Récupérer les données initiales et appliquer le filtrage
         paniersData.setAll(servicePanier.afficher());
         applyFilter();
     }
 
     private void updateFilterPredicate() {
-        // Mettre à jour le prédicat de filtrage en fonction des valeurs saisies par l'utilisateur
         filterPredicate = panier -> {
             boolean qtePass = true;
             boolean prixPass = true;
 
-            // Vérifier si la quantité est saisie et respecte le filtre
             if (!tf_qteFilter.getText().isEmpty()) {
                 qtePass = panier.getQte() >= Integer.parseInt(tf_qteFilter.getText());
             }
 
-            // Vérifier si le prix unitaire est saisie et respecte le filtre
             if (!tf_prixUniteFilter.getText().isEmpty()) {
                 prixPass = panier.getPrixUnite() <= Float.parseFloat(tf_prixUniteFilter.getText());
             }
@@ -165,12 +189,10 @@ public class AfficherPanier {
             return qtePass && prixPass;
         };
 
-        // Appliquer le nouveau prédicat de filtrage
         applyFilter();
     }
 
     private void applyFilter() {
-        // Appliquer le prédicat de filtrage et mettre à jour la TableView
         ObservableList<Panier> filteredPaniers = FXCollections.observableArrayList();
         for (Panier panier : paniersData) {
             if (filterPredicate.evaluate(panier)) {
@@ -184,6 +206,7 @@ public class AfficherPanier {
     void filtrerDonnees() {
         updateFilterPredicate();
     }
+
     public void openModifierPanierDialog(Panier panier) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/ModifierPanier.fxml"));
         Parent root;
@@ -198,6 +221,7 @@ public class AfficherPanier {
             e.printStackTrace();
         }
     }
+
     @FXML
     public void openModifierPanierDialog(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterCommande.fxml"));
@@ -211,5 +235,14 @@ public class AfficherPanier {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private void updateTotal() {
+        double total = 0;
+        for (Panier panier : tv_panier.getItems()) {
+            total += panier.getPrixUnite() * panier.getQte();
+        }
+        // Mettre à jour l'affichage du total ici
+        System.out.println("Total: " + total); // Exemple de mise à jour de l'affichage du total
     }
 }

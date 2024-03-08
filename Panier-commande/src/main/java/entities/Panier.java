@@ -25,6 +25,7 @@ public class Panier {
         this.sousTotal = qte * prixUnite;
     }
 
+
     // Getters et Setters
     public int getIdPanier() {
         return idPanier;

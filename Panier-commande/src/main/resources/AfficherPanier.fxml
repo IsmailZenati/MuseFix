@@ -24,11 +24,10 @@
                 <Image url="@../../main/java/images/musefix.png" />
             </image>
         </ImageView>
-        <TableView fx:id="tv_panier" layoutX="70" layoutY="90.0" prefHeight="310.0" prefWidth="523.0">
+        <TableView fx:id="tv_panier" layoutX="70" layoutY="90.0" prefHeight="310.0" prefWidth="480.0">
             <columns>
                 <TableColumn fx:id="col_userId" editable="false" prefWidth="108.79999083280563" sortable="false" text="userID" visible="false" />
                 <TableColumn fx:id="col_idProduit" editable="false" prefWidth="132.800048828125" sortable="false" text="idProduit" visible="false" />
-                <TableColumn fx:id="col_qte" prefWidth="117.59996032714844" text="Quantité" />
                 <TableColumn fx:id="col_prixUnite" prefWidth="128.0" text="PrixUnité" />
                 <TableColumn fx:id="col_sousTotal" prefWidth="116.0" text="sousTotal" />
                 <TableColumn fx:id="col_modifier" prefWidth="80" text="Modifier" />
