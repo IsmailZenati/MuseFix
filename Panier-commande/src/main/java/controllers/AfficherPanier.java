@@ -5,6 +5,7 @@ import entities.Panier;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -190,6 +191,20 @@ public class AfficherPanier {
             root = loader.load();
             ModifierPanierController controller = loader.getController();
             controller.initData(panier);
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    public void openModifierPanierDialog(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/AjouterCommande.fxml"));
+        Parent root;
+        try {
+            root = loader.load();
+            AjouterCommandeController controller = loader.getController();
             Stage stage = new Stage();
             stage.setScene(new Scene(root));
             stage.show();

@@ -35,7 +35,7 @@
                 <TableColumn fx:id="col_supprimer" prefWidth="80" text="Supprimer" />
             </columns>
         </TableView>
-
+        <Button fx:id="commanderButton" text="Commander" onAction="#openModifierPanierDialog" layoutY="410.0" layoutX="275.0" />
         <!-- Ajout des TextField -->
         <TextField fx:id="tf_prixUniteFilter" layoutX="120.0" layoutY="63.0" promptText="Prix Unité Filter" />
         <TextField fx:id="tf_qteFilter" layoutX="283.0" layoutY="63.0" promptText="Quantité Filter" />
