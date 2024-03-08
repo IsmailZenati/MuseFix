@@ -68,4 +68,22 @@ public class ServicePack implements IService<packs> {
         }
         return packs;
     }
+    public List<packs> rechercher(int idPack) throws SQLException {
+        List<packs> packs = new ArrayList<>();
+        String req = "SELECT * FROM pack WHERE IdPack = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(req)) {
+            preparedStatement.setInt(1, idPack);
+            try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                while (resultSet.next()) {
+                    packs pack = new packs();
+                    pack.setIdPack(resultSet.getInt("IdPack"));
+                    pack.setTypePack(resultSet.getString("typePack"));
+                    pack.setPrix(resultSet.getFloat("prix"));
+                    pack.setAvantages(resultSet.getString("avantages"));
+                    packs.add(pack);
+                }
+            }
+        }
+        return packs;
+    }
 }

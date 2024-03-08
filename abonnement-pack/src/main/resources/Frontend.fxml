@@ -37,7 +37,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="learnmore" layoutX="466.0" layoutY="274.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="take a QUIZ" textFill="WHITE">
+            <Button fx:id="learnmore" layoutX="466.0" layoutY="274.0" mnemonicParsing="false" onAction="#freetrial" prefHeight="32.0" prefWidth="150.0" style="-fx-background-color: #27b376; -fx-font-weight: bold;" text="get  free trial" textFill="WHITE">
                <font>
                   <Font size="14.0" />
                </font>
@@ -91,7 +91,6 @@
                </cursor>
             </ProgressIndicator>
             <ProgressIndicator fx:id="progressindicator2" layoutX="520.0" layoutY="474.0" />
-            <ProgressIndicator layoutX="525.0" layoutY="274.0" />
          </children>
       </AnchorPane>
    </children>

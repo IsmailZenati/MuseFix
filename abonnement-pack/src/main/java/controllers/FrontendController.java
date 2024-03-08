@@ -65,6 +65,10 @@ public class FrontendController {
     private void handleLearnMoreButtonClick() {
         showAlert(AlertType.INFORMATION, "Subscription Confirmed", "Your subscription has been confirmed.");
     }
+    @FXML
+    private void freetrial() {
+        showAlert(AlertType.INFORMATION, "Congratulations!"," Your free trial has started. Enjoy the service!");
+    }
 
     @FXML
     private void ajouterpack(ActionEvent event) throws IOException {

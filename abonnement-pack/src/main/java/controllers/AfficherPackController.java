@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import services.ServiceAbonnement;
@@ -13,6 +14,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import services.ServicePack;
+import javafx.scene.control.Alert;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -33,6 +35,8 @@ public class AfficherPackController {
 
     @FXML
     private TableView<packs> tv_pack;
+    @FXML
+    private TextField txtSearch;
 
     @FXML
     void initialize() {
@@ -49,6 +53,7 @@ public class AfficherPackController {
 
         }
     }
+
     @FXML
     void modifierpack(ActionEvent event) {
         try {
@@ -60,6 +65,7 @@ public class AfficherPackController {
             System.out.println(e.getMessage());
         }
     }
+
     @FXML
     void supprimerpack(ActionEvent event) {
         try {
@@ -72,4 +78,26 @@ public class AfficherPackController {
         }
     }
 
+    @FXML
+    void rechercherPack(ActionEvent event) {
+        int idPack = Integer.parseInt(txtSearch.getText().trim());
+        try {
+            ServicePack servicePack = new ServicePack();
+            ObservableList<packs> packs = FXCollections.observableList(servicePack.rechercher(idPack));
+            if (packs.isEmpty()) {
+                showAlert(Alert.AlertType.WARNING, "Pack Non Trouvé", "Aucun pack trouvé avec l'ID spécifié.");
+            } else {
+                tv_pack.setItems(packs);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void showAlert(Alert.AlertType alertType, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
 }
